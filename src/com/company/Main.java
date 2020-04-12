@@ -2,13 +2,10 @@ package com.company;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -27,18 +24,9 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Hello World!");
-        Button buttun = new Button();
-        buttun.setText("Say 'hello world'");
-        buttun.setOnAction(new EventHandler<>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                System.out.println("Hello World!");
-            }
-        });
-        StackPane root = new StackPane();
-        root.getChildren().add(buttun);
-        stage.setScene(new Scene(root, 300, 250));
+        Pane myPane = FXMLLoader.load(getClass().getResource("home.fxml"));
+        Scene myScene = new Scene(myPane);
+        stage.setScene(myScene);
         stage.show();
-
     }
 }
