@@ -10,7 +10,10 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
     public static Stage window;
+    public static Scene mainScene;
+
     public static void main(String[] args) throws Exception {
         Class.forName("org.h2.Driver");
         Connection conn = DriverManager.getConnection("jdbc:h2:~/test", "", "");
@@ -23,10 +26,10 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         window=stage;
         Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
-        Scene scene = new Scene(root);
+       mainScene = new Scene(root);
 
         stage.setTitle("deneme");
-        stage.setScene(scene);
+        stage.setScene(mainScene);
         stage.show();
     }
 }
