@@ -7,5 +7,6 @@
    <children>
       <Label layoutX="108.0" layoutY="102.0" prefHeight="96.0" prefWidth="423.0" text="ben bir arıyım, ben bir arıyım çiçek çiçek dolaşır bal yaparım" textOverrun="CLIP" />
       <Button layoutX="46.0" layoutY="36.0" mnemonicParsing="false" onAction="#geriGit" prefHeight="41.0" prefWidth="89.0" text="geri" />
+      <Button layoutX="402.0" layoutY="64.0" mnemonicParsing="false" onAction="#kisiEkle" text="Button" />
    </children>
 </AnchorPane>
