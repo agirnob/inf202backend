@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="445.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.KisiEkleDegistir">
+   <children>
+      <Label layoutX="108.0" layoutY="102.0" prefHeight="96.0" prefWidth="423.0" text="ben bir arıyım, ben bir arıyım çiçek çiçek dolaşır bal yaparım" textOverrun="CLIP" />
+   </children>
+</AnchorPane>
