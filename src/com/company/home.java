@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class controllerHome extends Main implements Initializable {
+public class home extends Main implements Initializable {
 
 
     public void homePage(ActionEvent actionEvent) {
