@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="445.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.home">
+   <VBox prefHeight="445.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="73.0" prefWidth="227.0" />
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#homePage" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Kişi Ekle/Değiştir">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../icons/User.png" />
+            </ImageView>
+         </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#kisiEkleDegistir" onMouseEntered="#renkDegistir" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../icons/User.png" />
+            </ImageView>
+         </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../icons/User.png" />
+            </ImageView>
+         </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../icons/User.png" />
+            </ImageView>
+         </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../icons/User.png" />
+            </ImageView>
+         </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../icons/User.png" />
+            </ImageView>
+         </graphic>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+   </VBox>
+</AnchorPane>
