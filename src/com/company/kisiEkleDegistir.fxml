@@ -5,10 +5,13 @@
 
 <AnchorPane prefHeight="445.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.KisiEkleDegistir">
    <children>
-      <Label layoutX="108.0" layoutY="102.0" prefHeight="96.0" prefWidth="423.0" text="ben bir arıyım, ben bir arıyım çiçek çiçek dolaşır bal yaparım" textOverrun="CLIP" />
       <Button layoutX="46.0" layoutY="36.0" mnemonicParsing="false" onAction="#geriGit" prefHeight="41.0" prefWidth="89.0" text="geri" />
       <Button layoutX="405.0" layoutY="64.0" mnemonicParsing="false" onAction="#kisiEkle" text="Button" />
-      <TextField fx:id="isimDB" layoutX="174.0" layoutY="64.0" />
+      <TextField fx:id="isimDB" layoutX="174.0" layoutY="64.0" promptText="isim" />
+      <TextField fx:id="soyisimDB" layoutX="174.0" layoutY="122.0" promptText="soyisim" />
+      <TextField fx:id="seviyeDB" layoutX="174.0" layoutY="155.0" promptText="level" />
+      <TextField fx:id="sifreDB" layoutX="174.0" layoutY="197.0" promptText="şifre" />
+      <TextField fx:id="kullaniciDB" layoutX="174.0" layoutY="236.0" promptText="Kullanıcı Adı" />
 
    </children>
 </AnchorPane>
