@@ -1,8 +1,16 @@
 package com.company;
 
+
+
 import java.sql.*;
 
+
 public class DBManager {
+
+    public static Connection getConn() {
+        return conn;
+    }
+
     private static Connection conn;
 
 
@@ -13,7 +21,13 @@ public class DBManager {
     }
 
     public void closeDB() throws SQLException {
-        conn.close();
+        try {
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+            }
+        } catch (Exception e){
+            throw e;
+        }
     }
 
     public void tableCreate(String str) throws SQLException {
@@ -40,20 +54,11 @@ public class DBManager {
 
 
         return str;
-    }
+        }
 
-    public int genKey() throws SQLException {
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.getGeneratedKeys();
-
-        return rs.getInt(1);
-    }
-
-    public void deleteUserDB(String tablo,String silinenYer,String silinecek) throws SQLException {
-        PreparedStatement st = conn.prepareStatement("DELETE FROM "+tablo+" WHERE "+silinenYer+" = ?");
-        st.setString(1,silinecek);
+    public void deleteUserDB (String tablo,String silinenYer,String silinecek) throws SQLException {
+        PreparedStatement st = conn.prepareStatement("DELETE FROM " + tablo + " WHERE " + silinenYer + " = ?");
+        st.setString(1, silinecek);
         st.executeUpdate();
+    }}
 
-    }
-
-}

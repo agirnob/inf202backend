@@ -1,72 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="445.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.home">
+<AnchorPane prefHeight="445.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.home">
    <VBox prefHeight="445.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <Pane prefHeight="73.0" prefWidth="227.0" />
-      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#homePage" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Kişi Ekle/Değiştir">
+      <Pane prefHeight="48.0" prefWidth="227.0">
+         <VBox.margin>
+            <Insets bottom="13.0" top="13.0" />
+         </VBox.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding></Pane>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#homePage" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Templates">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../icons/Note.png" />
+            </ImageView>
+         </graphic>
+         <VBox.margin>
+            <Insets bottom="13.0" top="13.0" />
+         </VBox.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Button>
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#kisiEkleDegistir" onMouseEntered="#renkDegistir" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Kişi Ekle/Değiştir">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@../../icons/User.png" />
             </ImageView>
          </graphic>
          <VBox.margin>
-            <Insets />
+            <Insets bottom="13.0" top="13.0" />
          </VBox.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
       </Button>
-      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#kisiEkleDegistir" onMouseEntered="#renkDegistir" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Ekipman Ekle/Değiştir">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../icons/User.png" />
+               <Image url="@../../icons/Fllopy.png" />
             </ImageView>
          </graphic>
          <VBox.margin>
-            <Insets />
+            <Insets bottom="13.0" top="13.0" />
          </VBox.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
       </Button>
-      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Şirket Ekle/Değiştir">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../icons/User.png" />
+               <Image url="@../../icons/Analytics.png" />
             </ImageView>
          </graphic>
          <VBox.margin>
-            <Insets />
+            <Insets bottom="13.0" top="13.0" />
          </VBox.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
       </Button>
-      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
+      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Seçenekler">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../icons/User.png" />
+               <Image url="@../../icons/AdjustType2.png" />
             </ImageView>
          </graphic>
          <VBox.margin>
-            <Insets />
+            <Insets bottom="13.0" top="13.0" />
          </VBox.margin>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
       </Button>
-      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
-         <graphic>
-            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../icons/User.png" />
-            </ImageView>
-         </graphic>
+      <Pane prefHeight="48.0" prefWidth="200.0">
          <VBox.margin>
-            <Insets />
+            <Insets top="13.0" />
          </VBox.margin>
-      </Button>
-      <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: transparent;" text="Kişi Ekle/Değiştir">
-         <graphic>
-            <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../../icons/User.png" />
-            </ImageView>
-         </graphic>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Pane>
+   </VBox>
+   <VBox layoutX="227.0" prefHeight="445.0" prefWidth="687.0">
+      <HBox prefHeight="119.0" prefWidth="687.0">
          <VBox.margin>
-            <Insets />
+            <Insets top="22.0"/>
          </VBox.margin>
-      </Button>
+         <Button mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0" text="Button">
+            <HBox.margin>
+               <Insets left="60.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="30.0" layoutY="16.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="149.0" layoutY="16.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="238.0" layoutY="10.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="119.0" prefWidth="687.0">
+         <VBox.margin>
+            <Insets top="22.0"/>
+         </VBox.margin>
+         <Button mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0" text="Button">
+            <HBox.margin>
+               <Insets left="60.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="99.0" layoutY="10.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="99.0" layoutY="10.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="119.0" prefWidth="220.0">
+         <VBox.margin>
+            <Insets top="22.0"/>
+         </VBox.margin>
+         <Button mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0" text="Button">
+            <HBox.margin>
+               <Insets left="60.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="99.0" layoutY="10.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+         <Button layoutX="188.0" layoutY="10.0" mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0"
+                 text="Button">
+            <HBox.margin>
+               <Insets left="35.0" right="35.0" top="6.0"/>
+            </HBox.margin>
+         </Button>
+      </HBox>
    </VBox>
 </AnchorPane>

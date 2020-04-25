@@ -3,6 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/87f90511-21ed-455b-a16c-c9768e6793e9/console.sql" dialect="H2" />
     <file url="file://$PROJECT_DIR$/src/com/company/DBManager.java" dialect="H2" />
-    <file url="file://$PROJECT_DIR$/src/com/company/KisiEkleDegistir.java" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/src/com/company/kisiEkleDegistir.java" dialect="H2" />
   </component>
 </project>

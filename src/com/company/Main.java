@@ -23,10 +23,11 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         window=stage;
         Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
-       mainScene = new Scene(root);
+        mainScene = new Scene(root);
 
         stage.setTitle("deneme");
         stage.setScene(mainScene);
         stage.show();
     }
+
 }

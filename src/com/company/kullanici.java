@@ -2,32 +2,30 @@ package com.company;
 
 public class kullanici {
 
-    private long ID;
+
     private String isim;
     private String soyisim;
-    private int seviye;
-    private String kullanciAdi;
+    private String seviye;
+    private String kullaniciAdi;
     private String password;
 
-    public void kullaniciEkle(/*obje*/){
-        //büyük ihtimalle controllerdan al ve database ekle sql sınıfıyla
+
+    public kullanici(String isim, String soyisim, String seviye, String kullaniciAdi, String password) {
+
+        this.isim = isim;
+        this.soyisim = soyisim;
+        this.seviye = seviye;
+        this.kullaniciAdi = kullaniciAdi;
+        this.password = password;
+
     }
-    public void kullaniciCıkar(/*obje*/){
-        //controllerdan al databaseden düşür sql sınıfıyla
-    }
-    public void kullaniciDuzenle(){
-        //controllerdan al update sql sınıfyla
-    }
+    public kullanici(){}
 
 
 
-    public long getID() {
-        return ID;
-    }
 
-    public void setID(long ID) {
-        this.ID = ID;
-    }
+
+
 
     public String getIsim() {
         return isim;
@@ -45,20 +43,20 @@ public class kullanici {
         this.soyisim = soyisim;
     }
 
-    public int getSeviye() {
+    public String getSeviye() {
         return seviye;
     }
 
-    public void setSeviye(int seviye) {
+    public void setSeviye(String seviye) {
         this.seviye = seviye;
     }
 
-    public String getKullanciAdi() {
-        return kullanciAdi;
+    public String getKullaniciAdi() {
+        return kullaniciAdi;
     }
 
-    public void setKullanciAdi(String kullanciAdi) {
-        this.kullanciAdi = kullanciAdi;
+    public void setKullaniciAdi(String kullaniciAdi) {
+        this.kullaniciAdi = kullaniciAdi;
     }
 
     public String getPassword() {
