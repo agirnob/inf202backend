@@ -34,7 +34,9 @@ public class kisiEkleDegistir implements Initializable {
     public TableColumn <kullanici,String>d_seviye;
     public TableColumn <kullanici,String>d_kullanici;
     public TableColumn <kullanici,String>d_password;
-    String tableName = "qaaarrrr";
+    public TextField kullaniciAdi_Deg;
+    public Button kisiyiSil;
+    String tableName = "denememi";
     String select = "SELECT * FROM " + tableName;
     public static ObservableList<kullanici> data = FXCollections.observableArrayList();
 
@@ -79,37 +81,15 @@ public class kisiEkleDegistir implements Initializable {
         d_kullanici .setCellValueFactory(new PropertyValueFactory<>("kullaniciAdi"));
 
         degistirDB.setItems(data);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
 
 
     public void geriGit() {
         window.setScene(mainScene);
+        for ( int i = 0; i<degistirDB.getItems().size(); i++) {
+            degistirDB.getItems().clear();
+        }
     }
 
 
@@ -142,28 +122,13 @@ public class kisiEkleDegistir implements Initializable {
 
     }
 
-
+    public void kisiSil() throws SQLException {
+        DBManager db = new DBManager();
+        db.deleteUserDB(tableName,"kullaniciAdi",kullaniciAdi_Deg.getText());
+    }
 
 }
 
-//    ResultSet rs = DBManager.getConn().createStatement().executeQuery(select);
-
-    /*Adding to column dynamicly*/
-    //        for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
-
-//final int j = i;
-  //      TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
-    //    col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
-//public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
-  //      return new SimpleStringProperty(param.getValue().get(j).toString());
-    //    }
-      //  });
-
-        //degistirDB.getColumns().addAll(col);
-       // System.out.println("Column [" + i + "] ");
-
-        //}
-/*Adding info to a list*/
 
 
 

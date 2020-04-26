@@ -1,7 +1,6 @@
 package com.company;
 
 
-
 import java.sql.*;
 
 
@@ -25,7 +24,7 @@ public class DBManager {
             if (conn != null && !conn.isClosed()) {
                 conn.close();
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             throw e;
         }
     }
@@ -45,20 +44,25 @@ public class DBManager {
     }
 
     public void insertDB(String insertStr) throws SQLException {
-            Statement stmt = conn.createStatement();
-            stmt.executeUpdate(insertStr);
+        Statement stmt = conn.createStatement();
+        stmt.executeUpdate(insertStr);
     }
 
-    public String selectDB(String str) {
+    public String UpdateDB(String str) {
         str = "SELECT kullanıcıAdı FROM q";
 
 
         return str;
-        }
+    }
 
-    public void deleteUserDB (String tablo,String silinenYer,String silinecek) throws SQLException {
-        PreparedStatement st = conn.prepareStatement("DELETE FROM " + tablo + " WHERE " + silinenYer + " = ?");
-        st.setString(1, silinecek);
-        st.executeUpdate();
-    }}
+    public void deleteUserDB(String tablo, String silinenYer, String silinecek) throws SQLException {
+        Statement stmt = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        ResultSet rs = stmt.executeQuery("SELECT * FROM "+ tablo + " WHERE " + silinenYer + " = " + "'" + silinecek + "'");
+        System.out.println("çalışmıyor");
+        if (rs.next()) {
+            System.out.println("çalışıyor");
+            rs.deleteRow();
+        }
+    }
+}
 
