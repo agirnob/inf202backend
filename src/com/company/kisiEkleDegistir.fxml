@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="445.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.kisiEkleDegistir">
+<AnchorPane prefHeight="467.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.kisiEkleDegistir">
     <TabPane layoutY="1.0" prefHeight="363.0" prefWidth="583.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
         <Tab text="Kişi ekle">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="884.0">
@@ -43,16 +43,15 @@
                </font></Label>
             </AnchorPane>
         </Tab>
-        <Tab fx:id="degistirButoon" text="Kişi Değiştir/Çıkar">
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <Tab fx:id="degistirButoon" onSelectionChanged="#refreshTableView" text="Kişi Değiştir/Çıkar">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="458.0" prefWidth="572.0">
                 <Button mnemonicParsing="false" onAction="#geriGit" prefHeight="42.0" prefWidth="52.0" text="geri" />
-            <TableView fx:id="degistirDB" layoutX="14.0" layoutY="50.0" prefHeight="143.0" prefWidth="548.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0">
+            <TableView fx:id="degistirDB" layoutX="14.0" layoutY="50.0" onMouseClicked="#displayView" prefHeight="143.0" prefWidth="548.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0">
                <columns>
-                  <TableColumn fx:id="d_isim" prefWidth="107.0" text="İsim" />
-                  <TableColumn fx:id="d_soyisim" prefWidth="107.0" text="Soyisim" />
-                  <TableColumn fx:id="d_seviye" prefWidth="91.0" text="Seviye" />
-                  <TableColumn fx:id="d_kullanici" prefWidth="129.0" text="Kullanıcı Adı" />
-                  <TableColumn fx:id="d_password" prefWidth="113.0" text="Şifre" />
+                  <TableColumn fx:id="d_isim" minWidth="-Infinity" prefWidth="137.0" resizable="false" text="İsim" />
+                  <TableColumn fx:id="d_soyisim" minWidth="-Infinity" prefWidth="137.0" resizable="false" text="Soyisim" />
+                  <TableColumn fx:id="d_seviye" minWidth="-Infinity" prefWidth="137.0" resizable="false" text="Seviye" />
+                  <TableColumn fx:id="d_kullanici" minWidth="-Infinity" prefWidth="137.0" resizable="false" text="Kullanıcı Adı" />
                </columns></TableView>
                 <Pane layoutX="14.0" layoutY="193.0" prefHeight="49.0" prefWidth="548.0" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="193.0">
                     <Label layoutX="14.0" layoutY="15.0" prefHeight="28.0" prefWidth="166.0" text="Kişi Değiştir/Çıkar">
@@ -67,19 +66,42 @@
                             <Insets right="40.0" />
                         </HBox.margin>
                     </TextField>
-                    <Button mnemonicParsing="false" text="Update">
-                        <tooltip>
-                            <Tooltip />
-                        </tooltip>
-                    </Button>
                     <Button fx:id="kisiyiSil" mnemonicParsing="false" onAction="#kisiSil" text="Kişiyi Sil">
                         <HBox.margin>
                             <Insets left="40.0" right="40.0" />
                         </HBox.margin>
                     </Button>
                 </HBox>
-            <Pane layoutX="15.0" layoutY="303.0" prefHeight="15.0" prefWidth="549.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="8.0" />
-            <HBox layoutX="26.0" layoutY="283.0" prefHeight="111.0" prefWidth="550.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="8.0" />
+                 <Button fx:id="updateButton" layoutX="286.0" layoutY="330.0" mnemonicParsing="false" onAction="#kisiUpdate" text="Kişiyi Güncelle">
+                     <tooltip>
+                         <Tooltip />
+                     </tooltip>
+                 </Button>
+            <Separator layoutX="3.0" layoutY="274.0" prefHeight="7.0" prefWidth="572.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                <VBox layoutX="14.0" layoutY="278.0" prefHeight="156.0" prefWidth="220.0">
+                    <TextField fx:id="degistir_isim" promptText="İsim">
+                        <VBox.margin>
+                            <Insets bottom="5.0" />
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="degistir_soyisim" promptText="Soyisim">
+                        <VBox.margin>
+                            <Insets bottom="5.0" />
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="degistir_seviye" promptText="Seviye">
+                        <VBox.margin>
+                            <Insets bottom="5.0" />
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="degistir_ikullanici" promptText="Kullanıcı Adı">
+                        <VBox.margin>
+                            <Insets bottom="5.0" />
+                        </VBox.margin>
+                    </TextField>
+               <PasswordField fx:id="degistir_sifreS" promptText="Şifre" />
+                </VBox>
+                 <TextField fx:id="degistir_sifre" layoutX="293.0" layoutY="291.0" promptText="Şifre" />
             </AnchorPane>
         </Tab>
     </TabPane>

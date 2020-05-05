@@ -12,7 +12,6 @@ public class DBManager {
 
     private static Connection conn;
 
-
     public void connectDB() throws Exception {
         Class.forName("org.h2.Driver");
         conn = DriverManager.getConnection("jdbc:h2:~/test", "", "");
@@ -48,16 +47,9 @@ public class DBManager {
         stmt.executeUpdate(insertStr);
     }
 
-    public String UpdateDB(String str) {
-        str = "SELECT kullanıcıAdı FROM q";
-
-
-        return str;
-    }
-
     public void deleteUserDB(String tablo, String silinenYer, String silinecek) throws SQLException {
         Statement stmt = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        ResultSet rs = stmt.executeQuery("SELECT * FROM "+ tablo + " WHERE " + silinenYer + " = " + "'" + silinecek + "'");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM " + tablo + " WHERE " + silinenYer + " = " + "'" + silinecek + "'");
         System.out.println("çalışmıyor");
         if (rs.next()) {
             System.out.println("çalışıyor");

@@ -5,15 +5,20 @@ package com.company;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
+
+import java.io.IOException;
 import java.net.URL;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 import static com.company.Main.mainScene;
@@ -21,27 +26,56 @@ import static com.company.Main.window;
 
 
 public class kisiEkleDegistir implements Initializable {
+    @FXML
+    protected Tab degistirButoon;
+    @FXML
+    protected ChoiceBox<String> levelDB;
+    @FXML
+    protected javafx.scene.control.TextField isimDB;
+    @FXML
+    protected TextField soyisimDB;
+    @FXML
+    protected TextField sifreDB;
+    @FXML
+    protected TextField kullaniciDB;
+    @FXML
+    protected TableView<kullanici> degistirDB;
+    @FXML
+    protected TableColumn <kullanici,String>d_isim;
+    @FXML
+    protected TableColumn <kullanici,String>d_soyisim;
+    @FXML
+    protected TableColumn <kullanici,String>d_seviye;
+    @FXML
+    protected TableColumn <kullanici,String>d_kullanici;
+    @FXML
+    protected TableColumn <kullanici,String>d_password;
+    @FXML
+    protected TextField kullaniciAdi_Deg;
+    @FXML
+    protected Button kisiyiSil;
+    @FXML
+    protected Button updateButton;
+    @FXML
+    protected TextField degistir_isim;
+    @FXML
+    protected TextField degistir_soyisim;
+    @FXML
+    protected TextField degistir_seviye;
+    @FXML
+    protected TextField degistir_ikullanici;
+    @FXML
+    protected TextField degistir_sifre;
+    @FXML
+    protected PasswordField degistir_sifreS;
 
-    public Tab degistirButoon;
-    public ChoiceBox<String> levelDB;
-    public javafx.scene.control.TextField isimDB;
-    public TextField soyisimDB;
-    public TextField sifreDB;
-    public TextField kullaniciDB;
-    public TableView<kullanici> degistirDB;
-    public TableColumn <kullanici,String>d_isim;
-    public TableColumn <kullanici,String>d_soyisim;
-    public TableColumn <kullanici,String>d_seviye;
-    public TableColumn <kullanici,String>d_kullanici;
-    public TableColumn <kullanici,String>d_password;
-    public TextField kullaniciAdi_Deg;
-    public Button kisiyiSil;
-    String tableName = "denememi";
-    String select = "SELECT * FROM " + tableName;
-    public static ObservableList<kullanici> data = FXCollections.observableArrayList();
+    private String tableName = "denememi";
+    private String select = "SELECT * FROM " + tableName;
+    private ObservableList<kullanici> data = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         System.out.println("denemenemdnemnednemdne");
         levelDB.setItems(FXCollections.observableArrayList("1 level", "2 level", "3 level"));
         DBManager db = new DBManager();
@@ -61,37 +95,16 @@ public class kisiEkleDegistir implements Initializable {
             System.out.println(e);
         }
 
-        try {
-            Connection con = DBManager.getConn();
-            ResultSet rs = con.createStatement().executeQuery(select);
 
-            while (rs.next()){
-                data.add(new kullanici(rs.getString("isim"),rs.getString("soyisim"),rs.getString("seviye"),
-                        rs.getString("kullaniciAdi"),rs.getString("password")));
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        d_isim.setCellValueFactory(new PropertyValueFactory<>("isim"));
-        d_soyisim.setCellValueFactory(new PropertyValueFactory<>("soyisim"));
-        d_seviye.setCellValueFactory(new PropertyValueFactory<>("seviye"));
-        d_password.setCellValueFactory(new PropertyValueFactory<>("password"));
-        d_kullanici .setCellValueFactory(new PropertyValueFactory<>("kullaniciAdi"));
-
-        degistirDB.setItems(data);
     }
-
-
 
     public void geriGit() {
         window.setScene(mainScene);
         for ( int i = 0; i<degistirDB.getItems().size(); i++) {
             degistirDB.getItems().clear();
         }
-    }
 
+    }
 
     public void kisiEkle() throws Exception {
         DBManager db = new DBManager();
@@ -125,8 +138,67 @@ public class kisiEkleDegistir implements Initializable {
     public void kisiSil() throws SQLException {
         DBManager db = new DBManager();
         db.deleteUserDB(tableName,"kullaniciAdi",kullaniciAdi_Deg.getText());
+        refreshTableView();
+
     }
 
+    public void kisiUpdate() throws SQLException {
+
+        String sql = "UPDATE " + tableName + " SET isim ='" + degistir_isim.getText() + "' , soyisim = '" + degistir_soyisim.getText() +
+                "', seviye = '" + degistir_seviye.getText() + "' , password = '" + degistir_sifreS.getText()
+                + "', kullaniciAdi = '" + degistir_ikullanici.getText() + "'";
+        sql = sql + " WHERE kullaniciAdi = " + "'"+kullaniciAdi_Deg.getText()+"'";
+        PreparedStatement pstmt = DBManager.getConn().prepareStatement(sql);
+        try {
+            pstmt.execute();
+            refreshTableView();
+        }catch (org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException e) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setHeaderText("Aynı kullanıcı girilmesi");
+            errorAlert.setContentText("Aynı kullanıcı adına sahip kişi oluşturamazsınız");
+            errorAlert.showAndWait();
+        }
+    }
+
+    public void displayView(MouseEvent mouseEvent) {
+        kullanici user = degistirDB.getSelectionModel().getSelectedItem();
+        if(user == null){
+            kullaniciAdi_Deg.setText("Nichts gewahlt");
+        }else{
+            kullaniciAdi_Deg.setText(user.getKullaniciAdi());
+            degistir_isim.setText(user.getIsim());
+            degistir_soyisim.setText(user.getSoyisim());
+            degistir_ikullanici.setText(user.getKullaniciAdi());
+            degistir_seviye.setText(user.getSeviye());
+            degistir_sifreS.setText(user.getPassword());
+            degistir_sifre.setText(user.getPassword());
+        }
+    }
+
+    public void refreshTableView(){
+        try {
+            Connection con = DBManager.getConn();
+            ResultSet rs = con.createStatement().executeQuery(select);
+
+            for ( int i = 0; i<degistirDB.getItems().size(); i++) {
+                degistirDB.getItems().clear();
+            }
+
+            while (rs.next()){
+                data.add(new kullanici(rs.getString("isim"),rs.getString("soyisim"),rs.getString("seviye"),
+                        rs.getString("kullaniciAdi"),rs.getString("password")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        d_isim.setCellValueFactory(new PropertyValueFactory<>("isim"));
+        d_soyisim.setCellValueFactory(new PropertyValueFactory<>("soyisim"));
+        d_seviye.setCellValueFactory(new PropertyValueFactory<>("seviye"));
+        d_kullanici .setCellValueFactory(new PropertyValueFactory<>("kullaniciAdi"));
+
+        degistirDB.setItems(data);
+    }
 }
 
 

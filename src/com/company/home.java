@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class home extends Main implements Initializable {
+public class home extends kisiEkleDegistir implements Initializable {
 
 
     public void homePage(ActionEvent actionEvent) {
@@ -24,7 +24,7 @@ public class home extends Main implements Initializable {
     public void kisiEkleDegistir(ActionEvent actionEvent) throws IOException {
        Parent root= FXMLLoader.load(getClass().getResource("kisiEkleDegistir.fxml"));
        Scene scene = new Scene(root);
-       window.setScene(scene);
+       Main.window.setScene(scene);
 
     }
 
