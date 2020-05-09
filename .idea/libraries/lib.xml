@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="file://$USER_HOME$/javaekpaketler/javafx-sdk-14/lib" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/javaekpaketler/charm-glisten-4.4.1-javadoc.jar!/" />
+    </JAVADOC>
     <NATIVE>
       <root url="file://$USER_HOME$/javaekpaketler/javafx-sdk-14/lib" />
     </NATIVE>

@@ -10,5 +10,6 @@
     <orderEntry type="library" name="h2-1.4.200" level="project" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="com.eurodyn.qlack2.util:qlack2-util-drivers-ojdbc8:2.3.17" level="project" />
+    <orderEntry type="library" name="charm-glisten-4.4.1-javadoc" level="project" />
   </component>
 </module>

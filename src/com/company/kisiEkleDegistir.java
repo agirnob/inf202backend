@@ -1,29 +1,15 @@
 package com.company;
 
-
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-
-
-import java.io.IOException;
 import java.net.URL;
-
 import java.sql.*;
 import java.util.ResourceBundle;
-
-import static com.company.Main.mainScene;
-import static com.company.Main.window;
-
 
 public class kisiEkleDegistir implements Initializable {
     @FXML
@@ -49,8 +35,6 @@ public class kisiEkleDegistir implements Initializable {
     @FXML
     protected TableColumn <kullanici,String>d_kullanici;
     @FXML
-    protected TableColumn <kullanici,String>d_password;
-    @FXML
     protected TextField kullaniciAdi_Deg;
     @FXML
     protected Button kisiyiSil;
@@ -63,9 +47,7 @@ public class kisiEkleDegistir implements Initializable {
     @FXML
     protected TextField degistir_seviye;
     @FXML
-    protected TextField degistir_ikullanici;
-    @FXML
-    protected TextField degistir_sifre;
+    protected TextField degistir_ikullanici,degistir_sifre;
     @FXML
     protected PasswordField degistir_sifreS;
 
@@ -95,14 +77,6 @@ public class kisiEkleDegistir implements Initializable {
             System.out.println(e);
         }
 
-
-    }
-
-    public void geriGit() {
-        window.setScene(mainScene);
-        for ( int i = 0; i<degistirDB.getItems().size(); i++) {
-            degistirDB.getItems().clear();
-        }
 
     }
 
