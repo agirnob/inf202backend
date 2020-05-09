@@ -17,7 +17,7 @@
                   <Insets top="20.0" />
                </padding>
             </Pane>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#homePage" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Templates">
+            <Button fx:id="homePage" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#homePage" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Templates">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../icons/Note.png" />

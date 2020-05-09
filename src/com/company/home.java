@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -20,9 +21,12 @@ public class home extends kisiEkleDegistir implements Initializable {
     @FXML
     public VBox homeDiff;
     public BorderPane borderPaneMain;
+    public Button template1;
 
-    public void homePage(ActionEvent actionEvent) {
-
+    public void homePage(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/home.fxml"));
+        Main.mainScene= new Scene(root);
+        Main.window.setScene(Main.mainScene);
     }
 
     public void kisiEkleDegistir(ActionEvent actionEvent) throws IOException {
