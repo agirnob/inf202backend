@@ -22,7 +22,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         window=stage;
-        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/TemplateGecis.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/home.fxml"));
         mainScene = new Scene(root);
 
         stage.setTitle("deneme");

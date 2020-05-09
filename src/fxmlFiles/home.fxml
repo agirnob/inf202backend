@@ -98,7 +98,7 @@
                <VBox.margin>
                   <Insets top="22.0" />
                </VBox.margin>
-               <Button mnemonicParsing="false" prefHeight="106.0" prefWidth="89.0" text="Button">
+               <Button fx:id="template1" mnemonicParsing="false" onAction="#open" prefHeight="106.0" prefWidth="89.0" text="Button">
                   <HBox.margin>
                      <Insets left="60.0" right="35.0" top="6.0" />
                   </HBox.margin>
