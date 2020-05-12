@@ -1,4 +1,5 @@
-package controller;
+package com.company;
 
 public class TemplateBir {
+
 }

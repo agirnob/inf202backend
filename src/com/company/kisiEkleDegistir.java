@@ -58,7 +58,7 @@ public class kisiEkleDegistir implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        System.out.println("denemenemdnemnednemdne");
+
         levelDB.setItems(FXCollections.observableArrayList("1 level", "2 level", "3 level"));
         DBManager db = new DBManager();
         try {
@@ -145,7 +145,6 @@ public class kisiEkleDegistir implements Initializable {
             degistir_ikullanici.setText(user.getKullaniciAdi());
             degistir_seviye.setText(user.getSeviye());
             degistir_sifreS.setText(user.getPassword());
-            degistir_sifre.setText(user.getPassword());
         }
     }
 

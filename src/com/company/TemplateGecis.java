@@ -1,14 +1,18 @@
-package controller;
+package com.company;
 
 import agirnob.ComboBoxAutoComplete;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tooltip;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TemplateGecis implements Initializable {
+public class TemplateGecis extends home implements Initializable  {
 
 
     public ComboBox autoComplateIl;
@@ -29,5 +33,14 @@ public class TemplateGecis implements Initializable {
         autoComplateIl.setTooltip(new Tooltip());
         autoComplateIl.getItems().addAll(LISTA);
         new ComboBoxAutoComplete<String>(autoComplateIl);
+    }
+
+    public void gecis(ActionEvent actionEvent) throws IOException {
+        FXMLLoader  mainLoaderFXML = new FXMLLoader();
+        mainLoaderFXML.load(getClass().getResource("../../fxmlFiles/home.fxml"));
+
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/TemplateBir.fxml"));
+        borderPaneMain.setCenter(root);
+
     }
 }

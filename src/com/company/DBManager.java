@@ -37,7 +37,6 @@ public class DBManager {
             System.out.println("table başarılı bir şekilde oluşturuldu.");
         } catch (Exception e) {
             System.out.println(e);
-            System.out.println("bu zaten önceden var açmana gerek yok");
         }
 
     }

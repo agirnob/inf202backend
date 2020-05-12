@@ -10,18 +10,19 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class home extends kisiEkleDegistir implements Initializable {
+public class home implements Initializable {
 
     @FXML
     public VBox homeDiff;
     public BorderPane borderPaneMain;
     public Button template1;
+    public static BorderPane bord;
+
 
     public void homePage(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/home.fxml"));
@@ -42,16 +43,12 @@ public class home extends kisiEkleDegistir implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        bord =borderPaneMain;
     }
 
     public void open(ActionEvent actionEvent) throws IOException {
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/TemplateGecis.fxml"));
-        Scene scene = new Scene(root);
 
-        stage.setTitle("Seçenekler");
-        stage.setScene(scene);
-        stage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/TemplateGecis.fxml"));
+        borderPaneMain.setCenter(root);
     }
 }
