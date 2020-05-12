@@ -5,8 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tooltip;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,11 +38,9 @@ public class TemplateGecis extends home implements Initializable  {
     }
 
     public void gecis(ActionEvent actionEvent) throws IOException {
-        FXMLLoader  mainLoaderFXML = new FXMLLoader();
-        mainLoaderFXML.load(getClass().getResource("../../fxmlFiles/home.fxml"));
-
         Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/TemplateBir.fxml"));
-        borderPaneMain.setCenter(root);
+
+        ((BorderPane) (((Button) actionEvent.getSource()).getScene().getRoot().lookup("#borderPaneMain"))).setCenter(root);
 
     }
 }
