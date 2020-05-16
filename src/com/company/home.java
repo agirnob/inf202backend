@@ -43,7 +43,7 @@ public class home implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        bord =borderPaneMain;
+
     }
 
     public void open(ActionEvent actionEvent) throws IOException {

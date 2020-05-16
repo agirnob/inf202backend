@@ -5,8 +5,8 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.home">
-   <BorderPane fx:id="borderPaneMain" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="910.0">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.home">
+   <BorderPane fx:id="borderPaneMain" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="989.0">
       <left>
          <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" BorderPane.alignment="CENTER">
             <Button fx:id="homePage" alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#homePage" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Templates">
@@ -74,7 +74,7 @@
                   <Insets top="20.0" />
                </padding>
             </Button>
-            <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="12.0" prefWidth="227.0" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets top="13.0" />
                </VBox.margin>
@@ -85,8 +85,8 @@
          </VBox>
       </left>
       <center>
-         <VBox fx:id="homeDiff" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="896.0" BorderPane.alignment="CENTER">
-            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="119.0" prefWidth="687.0">
+         <VBox fx:id="homeDiff" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="644.0" BorderPane.alignment="CENTER">
+            <HBox minHeight="119.0" minWidth="687.0" prefHeight="119.0" prefWidth="687.0">
                <VBox.margin>
                   <Insets top="22.0" />
                </VBox.margin>

@@ -22,6 +22,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         window=stage;
+        stage.setMinHeight(445);
+        stage.setMinWidth(989);
         Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/home.fxml"));
         mainScene = new Scene(root);
 
