@@ -60,6 +60,7 @@ public class kisiEkleDegistir implements Initializable {
 
 
         levelDB.setItems(FXCollections.observableArrayList("1 level", "2 level", "3 level"));
+        levelDB.getSelectionModel().selectFirst();
         DBManager db = new DBManager();
         try {
             String strTable = "CREATE TABLE " + tableName + "(" +

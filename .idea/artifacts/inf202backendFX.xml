@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="inf202backendFX">
+    <output-path>$PROJECT_DIR$/out/artifacts/inf202backendFX</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="com.company.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="inf202backend.jar">
+        <element id="module-output" name="inf202backend" />
+        <element id="library" level="project" name="JavaFX" />
+        <element id="library" level="project" name="h2-1.4.200" />
+        <element id="library" level="project" name="com.eurodyn.qlack2.util:qlack2-util-drivers-ojdbc8:2.3.17" />
+        <element id="library" level="project" name="charm-glisten-4.4.1-javadoc" />
+      </element>
+    </root>
+  </artifact>
+</component>

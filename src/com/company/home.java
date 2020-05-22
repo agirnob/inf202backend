@@ -22,6 +22,7 @@ public class home implements Initializable {
     public BorderPane borderPaneMain;
     public Button template1;
     public static BorderPane bord;
+    public Button homePage;
 
 
     public void homePage(ActionEvent actionEvent) throws IOException {

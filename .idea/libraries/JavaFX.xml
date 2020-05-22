@@ -2,7 +2,6 @@
   <library name="JavaFX">
     <CLASSES>
       <root url="file://$USER_HOME$/javaekpaketler/javafx-sdk-14/lib" />
-      <root url="file://$PROJECT_DIR$/../../../javafx-sdk-11.0.2/lib" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/javaekpaketler/charm-glisten-4.4.1-javadoc.jar!/" />
@@ -12,11 +11,8 @@
     </NATIVE>
     <SOURCES>
       <root url="file://$USER_HOME$/javaekpaketler/javafx-sdk-14/lib" />
-      <root url="file://$PROJECT_DIR$/../../../javafx-sdk-11.0.2/lib" />
     </SOURCES>
     <jarDirectory url="file://$USER_HOME$/javaekpaketler/javafx-sdk-14/lib" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../../../javafx-sdk-11.0.2/lib" recursive="false" />
     <jarDirectory url="file://$USER_HOME$/javaekpaketler/javafx-sdk-14/lib" recursive="false" type="SOURCES" />
-    <jarDirectory url="file://$PROJECT_DIR$/../../../javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

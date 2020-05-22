@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<<<<<<< HEAD
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateBir">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateBir">
    <children>
       <TabPane prefHeight="400.0" prefWidth="762.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -23,16 +12,16 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ComboBox layoutX="26.0" layoutY="23.0" prefWidth="150.0" promptText="Müşteri" />
+                        <ComboBox fx:id="company" layoutX="26.0" layoutY="23.0" prefWidth="150.0" promptText="Müşteri" />
                         <ComboBox layoutX="26.0" layoutY="68.0" prefWidth="150.0" promptText="Proje Adı" />
                         <TextField layoutX="215.0" layoutY="23.0" promptText="Test Yeri" />
-                        <TextField layoutX="215.0" layoutY="68.0" promptText="Muayene Standartı" />
-                        <TextField layoutX="407.0" layoutY="23.0" promptText="Değerlendirme Standartı" />
+                        <TextField layoutX="215.0" layoutY="68.0" promptText="Muayene Standartı" text="TS EN ISO 17638" />
+                        <TextField layoutX="407.0" layoutY="23.0" promptText="Değerlendirme Standartı" text="TS EN ISO 23278 Class B" />
                         <Separator layoutX="1.0" layoutY="103.0" prefHeight="14.0" prefWidth="600.0" />
-                        <TextField layoutX="26.0" layoutY="124.0" promptText="Muayene Prosedürü" />
-                        <ChoiceBox layoutX="145.0" layoutY="171.0" prefHeight="26.0" prefWidth="52.0" />
+                        <TextField layoutX="26.0" layoutY="124.0" promptText="Muayene Prosedürü" text="P-101-004" />
+                        <ComboBox fx:id="muayeneKapsamı" layoutX="131.0" layoutY="171.0" prefHeight="26.0" prefWidth="66.0" />
                         <Label layoutX="8.0" layoutY="176.0" text="Muayene Kapsamı" />
-                        <TextField layoutX="216.0" layoutY="124.0" promptText="Resim No." text="-" />
+                        <TextField layoutX="216.0" layoutY="124.0" promptText="Resim No." text="                  -" />
                         <ComboBox layoutX="216.0" layoutY="171.0" prefWidth="150.0" promptText="Yüzey Durumu" />
                         <ComboBox layoutX="418.0" layoutY="124.0" prefHeight="26.0" prefWidth="170.0" promptText="Muayene Aşaması" />
                         <Separator layoutX="1.0" layoutY="216.0" prefHeight="14.0" prefWidth="600.0" />
@@ -109,17 +98,4 @@
         </tabs>
       </TabPane>
    </children>
-=======
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.TemplateBir"
-            prefHeight="400.0" prefWidth="600.0">
-
->>>>>>> d9302b3... added un commited files
 </AnchorPane>
