@@ -1,8 +1,10 @@
 package com.company;
 
 import agirnob.ComboBoxAutoComplete;
+import agirnob.ilceler;
 import com.company.home;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -11,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.BorderPane;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,6 +45,17 @@ public class TemplateGecis extends home implements Initializable  {
         Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/TemplateBir.fxml"));
 
         ((BorderPane) (((Button) actionEvent.getSource()).getScene().getRoot().lookup("#borderPaneMain"))).setCenter(root);
+        int deneme =autoComplateIl.getSelectionModel().getSelectedIndex();
+        System.out.println(deneme);
+    }
 
+
+    public void ilSec(ActionEvent actionEvent) {
+        autoComplateIlce.setTooltip(new Tooltip());
+        autoComplateIlce.getItems().addAll(ilceler.getAdanaIlce());
+        new ComboBoxAutoComplete<String>(autoComplateIlce);
+    }
+
+    public void ilceSec(ActionEvent actionEvent) {
     }
 }

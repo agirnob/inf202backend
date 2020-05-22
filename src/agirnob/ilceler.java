@@ -1,16 +1,16 @@
 package agirnob;
 
 public class ilceler {
-    private final String[] adanaIlce={"Aladağ","Ceyha","Çukurova","Feke","Imamoğlu","Karaisalı","Kozan","Pozantı","Saibeyli","Sarıçam","Seyhan","Tufanbeli"
+    private static final String[] adanaIlce={"Aladağ","Ceyha","Çukurova","Feke","Imamoğlu","Karaisalı","Kozan","Pozantı","Saibeyli","Sarıçam","Seyhan","Tufanbeli"
     ,"Yumurtalık"};
 
-    private final String[] adıyaman ={"Adıyaman","Besni","Çelikhan","Gerger","Gölbaşı","Kahta","Samsat","Sincik","Tut"};
+    private static final String[] adıyaman ={"Adıyaman","Besni","Çelikhan","Gerger","Gölbaşı","Kahta","Samsat","Sincik","Tut"};
 
-    private final String[] afyonkarahisar={"Basmakçı","Bayat","Bolvadin","Çay","Çobanlar","Dazkırı","Dinar","Emirdağ","Evciler",
+    private static final String[] afyonkarahisar={"Basmakçı","Bayat","Bolvadin","Çay","Çobanlar","Dazkırı","Dinar","Emirdağ","Evciler",
 
             "Hocalar","Ihsaniye","Iscehisar","Kızılören","Sandıklı","Sinanpaşa","Sultandağı","Şuhut"};
 
-    private final String[] ağrı={"Ağrı","Diyadin","Doğubeyzıt","Eleşkirt","Hamur","Patnos","Taşlıçay","Tutak"};
+    private static final String[] ağrı={"Ağrı","Diyadin","Doğubeyzıt","Eleşkirt","Hamur","Patnos","Taşlıçay","Tutak"};
 
     private final String[] aksaray ={"Ağaçören","Aksaaray","Eskil","Gülağaç","Güzelyurt","Ortaköy","Sarıyahşi","Sultanhanı"};
 
@@ -104,13 +104,21 @@ public class ilceler {
     private final String[] Van ={};
     private final String[] Yalova ={};
     private final String[] Yozgat ={};
-    private final String[] Zonguldak ={};
+    private static final String[] Zonguldak ={};
 
+    public static String[] getAdanaIlce() {
+        return adanaIlce;
+    }
 
+    public static String[] getAdıyaman() {
+        return adıyaman;
+    }
 
+    public static String[] getAfyonkarahisar() {
+        return afyonkarahisar;
+    }
 
-
-
-
-
+    public static String[] getAğrı() {
+        return ağrı;
+    }
 }
