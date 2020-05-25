@@ -1,96 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateBir">
+<AnchorPane prefHeight="418.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateBir">
    <children>
-      <TabPane prefHeight="400.0" prefWidth="762.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="418.0" prefWidth="762.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Proje Bilgileri">
+          <Tab text="Untitled Tab 1">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ComboBox fx:id="company" layoutX="26.0" layoutY="23.0" prefWidth="150.0" promptText="Müşteri" />
-                        <ComboBox layoutX="26.0" layoutY="68.0" prefWidth="150.0" promptText="Proje Adı" />
-                        <TextField fx:id="TestYeriTextField" layoutX="215.0" layoutY="23.0" promptText="Test Yeri" />
-                        <TextField layoutX="215.0" layoutY="68.0" promptText="Muayene Standartı" text="TS EN ISO 17638" />
-                        <TextField layoutX="407.0" layoutY="23.0" promptText="Değerlendirme Standartı" text="TS EN ISO 23278 Class B" />
-                        <Separator layoutX="1.0" layoutY="103.0" prefHeight="14.0" prefWidth="600.0" />
-                        <TextField layoutX="26.0" layoutY="124.0" promptText="Muayene Prosedürü" text="P-101-004" />
-                        <ComboBox fx:id="muayeneKapsamı" layoutX="131.0" layoutY="171.0" prefHeight="26.0" prefWidth="66.0" />
-                        <Label layoutX="8.0" layoutY="176.0" text="Muayene Kapsamı" />
-                        <TextField layoutX="216.0" layoutY="124.0" promptText="Resim No." text="                  -" />
-                        <ComboBox layoutX="216.0" layoutY="171.0" prefWidth="150.0" promptText="Yüzey Durumu" />
-                        <ComboBox layoutX="418.0" layoutY="124.0" prefHeight="26.0" prefWidth="170.0" promptText="Muayene Aşaması" />
-                        <Separator layoutX="1.0" layoutY="216.0" prefHeight="14.0" prefWidth="600.0" />
-                        <TextField layoutX="16.0" layoutY="230.0" promptText=" Sayfa No" />
-                        <TextField layoutX="16.0" layoutY="272.0" promptText="Rapor No" />
-                        <TextField layoutX="215.0" layoutY="230.0" promptText="Rapor Tarihi" />
-                        <ComboBox layoutX="216.0" layoutY="272.0" prefWidth="150.0" promptText="İş Emri No" />
-                        <ComboBox layoutX="428.0" layoutY="230.0" prefWidth="150.0" promptText="Tekilf No" />
-                     </children>
-                  </AnchorPane>
+                        <ComboBox layoutX="22.0" layoutY="24.0" prefWidth="150.0" promptText="Müşteri" />
+                        <ComboBox layoutX="22.0" layoutY="66.0" prefWidth="150.0" promptText="Proje Adı" />
+                        <Separator layoutY="117.0" prefHeight="0.0" prefWidth="600.0" />
+                        <Separator layoutX="596.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="507.0" prefWidth="5.0" />
+                        <TextField layoutX="198.0" layoutY="24.0" promptText="Test yeri" />
+                        <TextField layoutX="198.0" layoutY="66.0" promptText="Muayene Standartı" text="TS EN ISO 17638" />
+                        <TextField layoutX="398.0" layoutY="24.0" prefHeight="26.0" prefWidth="181.0" promptText="Değerlendirme Standartı" text="TS EN ISO 23278 Class B" />
+                        <TextField layoutX="12.0" layoutY="128.0" prefHeight="26.0" prefWidth="193.0" promptText="Muayene Prosedürü" text="P-101-004" />
+                        <TextField alignment="CENTER" layoutX="215.0" layoutY="128.0" promptText="Resim No." text="-" />
+                        <ComboBox layoutX="414.0" layoutY="128.0" prefWidth="150.0" promptText="Muayene Aşaması" />
+                        <Label layoutX="3.0" layoutY="176.0" prefHeight="16.0" prefWidth="121.0" text="Muayene Kapsamı" />
+                        <ComboBox layoutX="121.0" layoutY="171.0" prefHeight="26.0" prefWidth="85.0" promptText="100%" />
+                        <ComboBox layoutX="215.0" layoutY="170.0" prefWidth="150.0" promptText="Yüzey Durumu" />
+                        <Separator layoutX="-4.0" layoutY="212.0" prefHeight="0.0" prefWidth="600.0" />
+                        <TextField alignment="CENTER" layoutX="12.0" layoutY="222.0" promptText="Resim No." text="-" />
+                        <TextField alignment="CENTER" layoutX="12.0" layoutY="266.0" promptText="Resim No." text="-" />
+                        <TextField alignment="CENTER" layoutX="215.0" layoutY="222.0" promptText="Resim No." text="-" />
+                        <ComboBox layoutX="215.0" layoutY="266.0" prefWidth="150.0" promptText="İş Emri No." />
+                        <ComboBox layoutX="420.0" layoutY="222.0" prefWidth="150.0" promptText="Teklif No." />
+                     </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Ekipman Bilgileri">
+          <Tab text="Untitled Tab 2">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="762.0">
                      <children>
-                        <ImageView fitHeight="138.0" fitWidth="150.0" layoutX="18.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
-                        <CheckBox layoutX="124.0" layoutY="121.0" mnemonicParsing="false" />
-                        <ImageView fitHeight="136.0" fitWidth="137.0" layoutX="168.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
-                        <CheckBox layoutX="273.0" layoutY="121.0" mnemonicParsing="false" />
-                        <Label layoutX="419.0" layoutY="6.0" text="Süreksizliğin Yeri" />
-                        <Separator layoutX="371.0" layoutY="22.0" prefHeight="18.0" prefWidth="229.0" />
-                        <Separator layoutX="363.0" orientation="VERTICAL" prefHeight="163.0" prefWidth="20.0" />
-                        <Separator layoutX="-1.0" layoutY="155.0" prefHeight="14.0" prefWidth="600.0" />
-                        <Separator layoutX="371.0" layoutY="55.0" prefHeight="18.0" prefWidth="229.0" />
-                        <Separator layoutX="371.0" layoutY="88.0" prefHeight="18.0" prefWidth="229.0" />
-                        <Separator layoutX="371.0" layoutY="121.0" prefHeight="18.0" prefWidth="229.0" />
-                        <Separator layoutX="406.0" layoutY="30.0" orientation="VERTICAL" prefHeight="133.0" prefWidth="16.0" />
-                        <Label layoutX="373.0" layoutY="40.0" text="BM" />
-                        <Label layoutX="373.0" layoutY="74.0" text="HAZ" />
-                        <Label layoutX="373.0" layoutY="106.0" text="W" />
-                        <Label layoutX="373.0" layoutY="137.0" text="B" />
-                        <Label layoutX="18.0" layoutY="184.0" text="Label" />
-                        <Label layoutX="17.0" layoutY="257.0" text="Label" />
-                        <TextField layoutX="18.0" layoutY="209.0" />
-                        <TextField layoutX="18.0" layoutY="297.0" />
-                        <Label layoutX="257.0" layoutY="176.0" text="Label" />
-                        <TextField layoutX="248.0" layoutY="196.0" prefHeight="159.0" prefWidth="342.0" />
-                        <Separator layoutX="159.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="163.0" prefWidth="20.0" />
-                        <Label layoutX="419.0" layoutY="40.0" text="Ana Metal / Base Metal" />
-                        <Label layoutX="422.0" layoutY="74.0" text="Isıdan etkilenen bölge " />
-                        <Label layoutX="422.0" layoutY="106.0" text="Kaynak / Weld" />
-                        <Label layoutX="422.0" layoutY="137.0" text="Kaynak ağzı / Bevel " />
-                     </children>
-                  </AnchorPane>
+                        <Separator layoutY="146.0" prefHeight="21.0" prefWidth="557.0" />
+                        <ImageView fitHeight="150.0" fitWidth="166.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="166.0" layoutX="176.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                        <Separator layoutX="340.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="157.0" prefWidth="7.0" />
+                        <Separator layoutX="172.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="157.0" prefWidth="7.0" />
+                        <Label layoutX="381.0" layoutY="6.0" text="Süreksizliğin Yeri" />
+                        <Separator layoutX="344.0" layoutY="33.0" prefHeight="3.0" prefWidth="214.0" />
+                        <Separator layoutX="344.0" layoutY="91.0" prefHeight="7.0" prefWidth="211.0" />
+                        <Separator layoutX="344.0" layoutY="125.0" prefHeight="1.0" prefWidth="213.0" />
+                        <Separator layoutX="344.0" layoutY="61.0" prefHeight="7.0" prefWidth="216.0" />
+                        <Separator layoutX="552.0" orientation="VERTICAL" prefHeight="475.0" prefWidth="12.0" />
+                        <Separator layoutX="382.0" layoutY="34.0" orientation="VERTICAL" prefHeight="124.0" prefWidth="5.0" />
+                        <CheckBox layoutX="135.0" layoutY="128.0" mnemonicParsing="false" />
+                        <CheckBox layoutX="310.0" layoutY="128.0" mnemonicParsing="false" />
+                        <Label layoutX="347.0" layoutY="43.0" text="BM" />
+                        <Label layoutX="347.0" layoutY="101.0" text="W" />
+                        <Label layoutX="347.0" layoutY="70.0" text="HAZ" />
+                        <Label layoutX="395.0" layoutY="73.0" text="Isıdan Etkilenen Bölge" />
+                        <Label layoutX="395.0" layoutY="42.0" text="Ana Metal/Base Metal" />
+                        <Label layoutX="347.0" layoutY="132.0" text="B" />
+                        <Label layoutX="395.0" layoutY="101.0" text="Kaynak/Weld" />
+                        <Label layoutX="395.0" layoutY="132.0" text="Kaynak Ağzı/Bevel" />
+                        <TextField layoutX="23.0" layoutY="190.0" />
+                        <TextField layoutX="23.0" layoutY="278.0" />
+                        <TextArea layoutX="260.0" layoutY="164.0" prefHeight="205.0" prefWidth="287.0" />
+                        <Label layoutX="23.0" layoutY="167.0" text="Label" />
+                        <Label layoutX="23.0" layoutY="257.0" text="Label" />
+                     </children></AnchorPane>
             </content>
           </Tab>
-            <Tab text="Muayene sonuçları">
+            <Tab text="Untitled Tab">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="2.0" layoutY="8.0" prefHeight="357.0" prefWidth="762.0">
+                        <TableView layoutY="59.0" prefHeight="286.0" prefWidth="762.0">
                           <columns>
-                            <TableColumn prefWidth="67.0" text="Sıra No." />
-                            <TableColumn prefWidth="143.0" text="Kaynak/ Parça" />
-                              <TableColumn prefWidth="47.0" text="uzun" />
-                              <TableColumn prefWidth="99.0" text="Kaynak Yön" />
-                              <TableColumn prefWidth="101.0" text="Kalınlık(mm)" />
-                              <TableColumn minWidth="5.0" prefWidth="78.0" text="Çap(mm)" />
-                              <TableColumn prefWidth="71.0" text="Hata tipi" />
-                              <TableColumn prefWidth="100.0" text="Hatanın yeri" />
-                              <TableColumn prefWidth="52.0" text="Sonuc" />
+                            <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
+                            <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
+                              <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
+                              <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
+                              <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
+                              <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
+                              <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
+                              <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
+                              <TableColumn minWidth="15.0" prefWidth="84.0" text="P" />
                           </columns>
                         </TableView>
-                     </children>
-                  </AnchorPane>
+                        <TextField layoutY="14.0" prefHeight="26.0" prefWidth="80.0" />
+                        <TextField layoutX="505.0" layoutY="14.0" prefHeight="26.0" prefWidth="73.0" />
+                        <TextField layoutX="592.0" layoutY="14.0" prefHeight="26.0" prefWidth="69.0" />
+                        <TextField layoutX="678.0" layoutY="14.0" prefHeight="26.0" prefWidth="70.0" />
+                        <TextField layoutX="423.0" layoutY="14.0" prefHeight="26.0" prefWidth="67.0" />
+                        <TextField layoutX="338.0" layoutY="14.0" prefHeight="26.0" prefWidth="77.0" />
+                        <TextField layoutX="255.0" layoutY="14.0" prefHeight="26.0" prefWidth="74.0" />
+                        <TextField layoutX="169.0" layoutY="14.0" prefHeight="26.0" prefWidth="77.0" />
+                        <TextField layoutX="87.0" layoutY="14.0" prefHeight="26.0" prefWidth="75.0" />
+                     </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="Personal Bilgileri">
+            <Tab text="Untitled Tab">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
               </content>

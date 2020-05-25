@@ -248,6 +248,8 @@ public final class excellExport {
         FileOutputStream out = new FileOutputStream(file);
         wb.write(out);
         out.close();
+        excel2pdf e2p = new excel2pdf();
+        e2p.deneme();
     }
 
 

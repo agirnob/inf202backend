@@ -5,14 +5,15 @@ import agirnob.ilceler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tooltip;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import agirnob.ilIlceArray;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class TemplateGecis extends home implements Initializable {
@@ -28,24 +29,26 @@ public class TemplateGecis extends home implements Initializable {
             "Osmaniye", "Rize", "Sakarya", "Samsun", "Şanlıurfa", "Siirt", "Sinop", "Sivas", "Şırnak", "Tekirdağ", "Tokat",
             "Trabzon", "Tunceli", "Uşak", "Van", "Yalova", "Yozgat", "Zonguldak"};
 
-
+    public ArrayList<String>iliceList = new ArrayList<String>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        iliceList.add("");
+        iliceList.add("");
+        System.out.println(iliceList.size());
         autoComplateIl.setTooltip(new Tooltip());
         autoComplateIl.getItems().addAll(LISTA);
         new ComboBoxAutoComplete<String>(autoComplateIl);
     }
 
     public void gecis(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/TemplateBir.fxml"));
-
+        AnchorPane root = (AnchorPane) FXMLLoader.load(Main.class.getResource("../../fxmlFiles/TemplateBir.fxml"));
         ((BorderPane) (((Button) actionEvent.getSource()).getScene().getRoot().lookup("#borderPaneMain"))).setCenter(root);
         int deneme = autoComplateIl.getSelectionModel().getSelectedIndex();
         System.out.println(deneme);
-
+        //TemplateBier tb = new TemplateBier(iliceList);
 
     }
+
 
 
     public void ilSec(ActionEvent actionEvent) {
@@ -58,12 +61,14 @@ public class TemplateGecis extends home implements Initializable {
                 autoComplateIlce.getItems().setAll(ilceler.getAdanaIlce());
                 new ComboBoxAutoComplete<String>(autoComplateIlce);
                 autoComplateIlce.getSelectionModel().selectFirst();
+                iliceList.set(0,(String)autoComplateIl.getValue());
                 break;
             case 2:
                 autoComplateIlce.setTooltip(new Tooltip());
                 autoComplateIlce.getItems().setAll(ilceler.getAdıyaman());
                 new ComboBoxAutoComplete<String>(autoComplateIlce);
                 autoComplateIlce.getSelectionModel().selectFirst();
+                iliceList.set(0,(String)autoComplateIl.getValue());
                 break;
             case 3:
                 autoComplateIlce.getItems().removeAll();
@@ -71,6 +76,7 @@ public class TemplateGecis extends home implements Initializable {
                 autoComplateIlce.getItems().setAll(ilceler.getAfyonkarahisar());
                 new ComboBoxAutoComplete<String>(autoComplateIlce);
                 autoComplateIlce.getSelectionModel().selectFirst();
+                iliceList.set(0,(String)autoComplateIl.getValue());
                 break;
         }
     }
@@ -78,6 +84,7 @@ public class TemplateGecis extends home implements Initializable {
 
     public void ilceSec(ActionEvent actionEvent) {
         System.out.println(ilIlceArray.ilIlce);
+        iliceList.set(1,(String)autoComplateIlce.getValue());
     }
 }
 
