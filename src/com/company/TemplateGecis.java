@@ -17,10 +17,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class TemplateGecis extends home implements Initializable {
+public class TemplateGecis extends Home implements Initializable {
 
-    public ComboBox autoComplateIl;
-    public ComboBox autoComplateIlce;
+    @FXML private ComboBox autoComplateIl;
+    @FXML private ComboBox autoComplateIlce;
     private static final String[] LISTA = {"Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Aksaray", "Amasya", "Ankara", "Antalya",
             "Ardahan", "Artvin", "Aydın", "Balıkesir", "Bartın", "Batman", "Bayburt", "Bilecik", "Bingöl", "Bitlis", "Bolu",
             "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Düzce", "Edirne", "Elazığ", "Erzincan",

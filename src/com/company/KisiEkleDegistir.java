@@ -11,7 +11,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class kisiEkleDegistir implements Initializable {
+public class KisiEkleDegistir implements Initializable {
     @FXML
     protected Tab degistirButoon;
     @FXML
@@ -25,15 +25,15 @@ public class kisiEkleDegistir implements Initializable {
     @FXML
     protected TextField kullaniciDB;
     @FXML
-    protected TableView<kullanici> degistirDB;
+    protected TableView<Kullanici> degistirDB;
     @FXML
-    protected TableColumn <kullanici,String>d_isim;
+    protected TableColumn <Kullanici,String>d_isim;
     @FXML
-    protected TableColumn <kullanici,String>d_soyisim;
+    protected TableColumn <Kullanici,String>d_soyisim;
     @FXML
-    protected TableColumn <kullanici,String>d_seviye;
+    protected TableColumn <Kullanici,String>d_seviye;
     @FXML
-    protected TableColumn <kullanici,String>d_kullanici;
+    protected TableColumn <Kullanici,String>d_kullanici;
     @FXML
     protected TextField kullaniciAdi_Deg;
     @FXML
@@ -53,7 +53,7 @@ public class kisiEkleDegistir implements Initializable {
 
     private String tableName = "denememi";
     private String select = "SELECT * FROM " + tableName;
-    private ObservableList<kullanici> data = FXCollections.observableArrayList();
+    private ObservableList<Kullanici> data = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -83,7 +83,7 @@ public class kisiEkleDegistir implements Initializable {
 
     public void kisiEkle() throws Exception {
         DBManager db = new DBManager();
-        kullanici kisi = new kullanici(isimDB.getText(), soyisimDB.getText(), levelDB.getValue(), kullaniciDB.getText(), sifreDB.getText());
+        Kullanici kisi = new Kullanici(isimDB.getText(), soyisimDB.getText(), levelDB.getValue(), kullaniciDB.getText(), sifreDB.getText());
 
         String insertStr = "INSERT INTO " + tableName +
                 " VALUES(" +
@@ -136,7 +136,7 @@ public class kisiEkleDegistir implements Initializable {
     }
 
     public void displayView(MouseEvent mouseEvent) {
-        kullanici user = degistirDB.getSelectionModel().getSelectedItem();
+        Kullanici user = degistirDB.getSelectionModel().getSelectedItem();
         if(user == null){
             kullaniciAdi_Deg.setText("Nichts gewahlt");
         }else{
@@ -159,7 +159,7 @@ public class kisiEkleDegistir implements Initializable {
             }
 
             while (rs.next()){
-                data.add(new kullanici(rs.getString("isim"),rs.getString("soyisim"),rs.getString("seviye"),
+                data.add(new Kullanici(rs.getString("isim"),rs.getString("soyisim"),rs.getString("seviye"),
                         rs.getString("kullaniciAdi"),rs.getString("password")));
             }
         } catch (SQLException e) {

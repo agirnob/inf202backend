@@ -1,6 +1,6 @@
 package com.company;
 
-public class kullanici {
+public class Kullanici {
 
 
     private String isim;
@@ -10,7 +10,7 @@ public class kullanici {
     private String password;
 
 
-    public kullanici(String isim, String soyisim, String seviye, String kullaniciAdi, String password) {
+    public Kullanici(String isim, String soyisim, String seviye, String kullaniciAdi, String password) {
 
         this.isim = isim;
         this.soyisim = soyisim;
@@ -19,7 +19,7 @@ public class kullanici {
         this.password = password;
 
     }
-    public kullanici(){}
+    public Kullanici(){}
 
 
 

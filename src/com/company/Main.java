@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.apache.poi.poifs.filesystem.DirectoryNode;
 
 public class Main extends Application {
 
@@ -25,7 +24,7 @@ public class Main extends Application {
         window=stage;
         stage.setMinHeight(445);
         stage.setMinWidth(989);
-        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/Home.fxml"));
         mainScene = new Scene(root);
 
         stage.setTitle("deneme");

@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class home implements Initializable {
+public class Home implements Initializable {
 
     @FXML
     public VBox homeDiff;
@@ -26,14 +26,14 @@ public class home implements Initializable {
 
 
     public void homePage(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/Home.fxml"));
         Main.mainScene= new Scene(root);
         Main.window.setScene(Main.mainScene);
     }
 
     public void kisiEkleDegistir(ActionEvent actionEvent) throws IOException {
 
-       Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/kisiEkleDegistir.fxml"));
+       Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/KisiEkleDegistir.fxml"));
        borderPaneMain.setCenter(root);
 
 
