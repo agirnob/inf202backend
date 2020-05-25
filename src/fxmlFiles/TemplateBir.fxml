@@ -13,7 +13,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="418.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateBir">
+<AnchorPane fx:id="templateBir" prefHeight="418.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateBir">
    <children>
       <TabPane prefHeight="418.0" prefWidth="762.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>

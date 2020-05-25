@@ -1,6 +1,6 @@
 package agirnob;
 
-public class ilceler {
+public class Ilceler {
     private static final String[] adanaIlce={"Aladağ","Ceyha","Çukurova","Feke","Imamoğlu","Karaisalı","Kozan","Pozantı","Saibeyli","Sarıçam","Seyhan","Tufanbeli"
     ,"Yumurtalık"};
 

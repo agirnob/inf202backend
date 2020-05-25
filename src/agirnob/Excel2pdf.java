@@ -11,7 +11,7 @@ import com.itextpdf.text.pdf.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class excel2pdf {
+public class Excel2pdf {
     public void deneme() throws Exception{
 
         FileInputStream input_document = new FileInputStream(new File("timesheet.xlsx"));

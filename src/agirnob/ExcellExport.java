@@ -45,7 +45,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author Yegor Kozlov
  */
 @SuppressWarnings({"java:S106", "java:S4823", "java:S1192"})
-public final class excellExport {
+public final class ExcellExport {
     private static final String[] titles = {
             "Person", "ID", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun",
             "Total\nHrs", "Overtime\nHrs", "Regular\nHrs"
@@ -56,7 +56,7 @@ public final class excellExport {
             {"Gisella Bronzetti", "GB", 4.0, 3.0, 1.0, 3.5, null, null, 4.0},
     };
 
-    private excellExport() {
+    private ExcellExport() {
     }
 
     public static void excellExport(String[] args) throws Exception {
@@ -248,7 +248,7 @@ public final class excellExport {
         FileOutputStream out = new FileOutputStream(file);
         wb.write(out);
         out.close();
-        excel2pdf e2p = new excel2pdf();
+        Excel2pdf e2p = new Excel2pdf();
         e2p.deneme();
     }
 
