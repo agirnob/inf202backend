@@ -2,25 +2,43 @@ package com.company;
 
 import agirnob.ComboBoxAutoComplete;
 import agirnob.Ilceler;
+import controller.TemplateBir;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import agirnob.IlIlceArray;
+
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class TemplateGecis extends Home implements Initializable {
 
-    @FXML private ComboBox autoComplateIl;
-    @FXML private ComboBox autoComplateIlce;
+    public String getTableName() {
+        return tableName;
+    }
+
+    public String getSelect() {
+        return select;
+    }
+
+    private final String tableName = "buBirDeneme";
+
+    private final String select = "SELECT * FROM " + tableName;
+
+    @FXML
+    private ComboBox<String> autoComplateIl;
+    @FXML
+    private ComboBox<String> autoComplateIlce;
     private static final String[] LISTA = {"Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Aksaray", "Amasya", "Ankara", "Antalya",
             "Ardahan", "Artvin", "Aydın", "Balıkesir", "Bartın", "Batman", "Bayburt", "Bilecik", "Bingöl", "Bitlis", "Bolu",
             "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Düzce", "Edirne", "Elazığ", "Erzincan",
@@ -30,8 +48,9 @@ public class TemplateGecis extends Home implements Initializable {
             "Osmaniye", "Rize", "Sakarya", "Samsun", "Şanlıurfa", "Siirt", "Sinop", "Sivas", "Şırnak", "Tekirdağ", "Tokat",
             "Trabzon", "Tunceli", "Uşak", "Van", "Yalova", "Yozgat", "Zonguldak"};
 
-    public ArrayList<String>iliceList = new ArrayList<String>();
-    @FXML private AnchorPane templateGecis;
+    public ArrayList<String> iliceList = new ArrayList<String>();
+    @FXML
+    private AnchorPane templateGecis;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -41,37 +60,50 @@ public class TemplateGecis extends Home implements Initializable {
         autoComplateIl.setTooltip(new Tooltip());
         autoComplateIl.getItems().addAll(LISTA);
         new ComboBoxAutoComplete<String>(autoComplateIl);
+
     }
 
-    public void gecis(ActionEvent actionEvent) throws IOException {
-        AnchorPane root = (AnchorPane) FXMLLoader.load(Main.class.getResource("../../fxmlFiles/TemplateBir.fxml"));
+
+    public void gecis(ActionEvent actionEvent) throws IOException, SQLException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../fxmlFiles/TemplateBir.fxml"));
+        Parent root = loader.load();
+        TemplateBir tb = (TemplateBir) loader.getController();
+        tb.setField(autoComplateIlce.getValue(), autoComplateIl.getValue());
         ((BorderPane) (((Button) actionEvent.getSource()).getScene().getRoot().lookup("#borderPaneMain"))).setCenter(root);
-        int deneme = autoComplateIl.getSelectionModel().getSelectedIndex();
-        System.out.println(deneme);
-        //TemplateBier tb = new TemplateBier(iliceList);
 
     }
-
-
 
     public void ilSec(ActionEvent actionEvent) {
         int x = 0;
-        x = autoComplateIl.getSelectionModel().getSelectedIndex()+1;
+        x = autoComplateIl.getSelectionModel().getSelectedIndex() + 1;
         System.out.println(x);
+        ilIlceSwitch(x);
+    }
+
+    public void ilceSec(ActionEvent actionEvent) throws SQLException {
+        iliceList.set(1, autoComplateIlce.getValue());
+        System.out.println(IlIlceArray.ilIlce);
+        DBManager db = new DBManager();
+        db.deleteUserDB(tableName, "il", "adana");
+    }
+
+    public void ilIlceSwitch(int x) {
         switch (x) {
             case 1:
+
                 autoComplateIlce.setTooltip(new Tooltip());
                 autoComplateIlce.getItems().setAll(Ilceler.getAdanaIlce());
                 new ComboBoxAutoComplete<String>(autoComplateIlce);
                 autoComplateIlce.getSelectionModel().selectFirst();
-                iliceList.set(0,(String)autoComplateIl.getValue());
+                iliceList.set(0, autoComplateIl.getValue());
                 break;
             case 2:
                 autoComplateIlce.setTooltip(new Tooltip());
                 autoComplateIlce.getItems().setAll(Ilceler.getAdıyaman());
                 new ComboBoxAutoComplete<String>(autoComplateIlce);
                 autoComplateIlce.getSelectionModel().selectFirst();
-                iliceList.set(0,(String)autoComplateIl.getValue());
+                iliceList.set(0, autoComplateIl.getValue());
                 break;
             case 3:
                 autoComplateIlce.getItems().removeAll();
@@ -79,53 +111,10 @@ public class TemplateGecis extends Home implements Initializable {
                 autoComplateIlce.getItems().setAll(Ilceler.getAfyonkarahisar());
                 new ComboBoxAutoComplete<String>(autoComplateIlce);
                 autoComplateIlce.getSelectionModel().selectFirst();
-                iliceList.set(0,(String)autoComplateIl.getValue());
+                iliceList.set(0, autoComplateIl.getValue());
                 break;
         }
-    }
-
-
-    public void ilceSec(ActionEvent actionEvent) {
-        System.out.println(IlIlceArray.ilIlce);
-        iliceList.set(1,(String)autoComplateIlce.getValue());
     }
 }
 
 
-
-/*
- case 4:
-         break;
-         case 5:
-         break;
-         case 6:
-         break;
-         case 7:
-         break;
-         case 8:
-         break;
-         case 9:
-         break;
-         case 10:
-         break;
-         case 11:
-         break;
-         case 12:
-         break;
-         case 13:
-         break;
-         case 14:
-         break;
-         case 15:
-         break;
-         case 16:
-         break;
-         case 17:
-         break;
-         case 18:
-         break;
-         case 19:
-         break;
-         case 20:
-         break;
- */

@@ -1,10 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.EkipmanBilgileri"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="480.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EkipmanBilgileri">
+   <children>
+      <TabPane prefHeight="486.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ekipman Ekle">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="590.0">
+                     <children>
+                        <TextField layoutX="320.0" layoutY="78.0" promptText="kutup mesafesi" />
+                        <TextField layoutX="320.0" layoutY="141.0" promptText="MPTaşıyıcı Ortam" />
+                        <TextField layoutX="75.0" layoutY="141.0" promptText="Mıknatıslama Tekniği" />
+                        <TextField layoutX="320.0" layoutY="200.0" promptText="UV ışık şiddeti" />
+                        <TextField layoutX="75.0" layoutY="200.0" promptText="ışık mesafesi" />
+                        <TextField layoutX="75.0" layoutY="259.0" promptText="Muayene Bölgesi" />
+                        <ComboBox layoutX="320.0" layoutY="259.0" prefWidth="150.0" promptText="Akım Tİpi" />
+                        <Button layoutX="254.0" layoutY="336.0" mnemonicParsing="false" text="ekle" />
+                        <TextField layoutX="75.0" layoutY="78.0" promptText="Ekiipman İsmi" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Değiştir/Çıkar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="600.0">
+                     <children>
+                        <TableView layoutX="6.0" layoutY="6.0" prefHeight="182.0" prefWidth="587.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="Ekipman İsmi" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                          </columns>
+                        </TableView>
+                        <Separator layoutX="-39.0" layoutY="239.0" prefHeight="13.0" prefWidth="661.0" />
+                        <Label layoutX="14.0" layoutY="192.0" text="Ekipman Değiştir/Çıkar" />
+                        <TextField layoutX="14.0" layoutY="211.0" promptText="Ekipman İsmi" />
+                        <Button layoutX="216.0" layoutY="211.0" mnemonicParsing="false" text="Ekipmanı Sil" />
+                        <TextField layoutX="14.0" layoutY="273.0" promptText="Ekipman İsmi" />
+                        <TextField layoutX="14.0" layoutY="312.0" promptText="Mıknatıslama Tekniği" />
+                        <TextField layoutX="14.0" layoutY="354.0" promptText="Işık Mesafesi" />
+                        <TextField layoutX="14.0" layoutY="394.0" promptText="Muayene Bölgesi" />
+                        <TextField layoutX="217.0" layoutY="312.0" promptText="MPTaşıyıcı Ortam" />
+                        <TextField layoutX="217.0" layoutY="273.0" promptText="Kutup Mesafesi" />
+                        <ComboBox layoutX="217.0" layoutY="394.0" prefWidth="150.0" promptText="Akım Tipi" />
+                        <Button layoutX="417.0" layoutY="361.0" mnemonicParsing="false" text="Ekipmanı Güncelle" />
+                        <TextField layoutX="217.0" layoutY="354.0" promptText="UV Işık Şiddeti" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>

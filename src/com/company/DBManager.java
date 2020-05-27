@@ -36,14 +36,23 @@ public class DBManager {
             stmt.executeUpdate(str);
             System.out.println("table başarılı bir şekilde oluşturuldu.");
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
 
+    }
+    public void tableDrop(String str) throws SQLException{
+        Statement stmt = conn.createStatement();
+        try {
+            stmt.executeUpdate(str);
+        }catch (Exception e){
+            System.out.println(e.toString());
+        }
     }
 
     public void insertDB(String insertStr) throws SQLException {
         Statement stmt = conn.createStatement();
         stmt.executeUpdate(insertStr);
+        System.out.println("inserted");
     }
 
     public void deleteUserDB(String tablo, String silinenYer, String silinecek) throws SQLException {

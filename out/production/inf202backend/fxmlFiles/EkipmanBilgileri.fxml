@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.EkipmanBilgileri"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EkipmanBilgileri">
+   <children>
+      <TextField layoutX="58.0" layoutY="52.0" promptText="kutup mesafesi" />
+      <TextField layoutX="58.0" layoutY="98.0" promptText="MPTaşıyıcı Ortam" />
+      <TextField layoutX="58.0" layoutY="143.0" promptText="Mıknatıslama Tekniği" />
+      <TextField layoutX="58.0" layoutY="200.0" promptText="UV ışık şiddeti" />
+      <TextField layoutX="58.0" layoutY="250.0" promptText="ışık mesafesi" />
+      <TextField layoutX="343.0" layoutY="52.0" promptText="Muayene Bölgesi" />
+      <ComboBox layoutX="343.0" layoutY="98.0" prefWidth="150.0" promptText="Akım Tİpi" />
+   </children>
 </AnchorPane>
