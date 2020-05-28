@@ -1,77 +1,67 @@
 package com.company;
 
 public class Ekipman {
+
+    public Ekipman(String kutupMesafesi, String cihazAdi, String MPTasiyiciOrtam, String miknatislamaTeknigi,
+                   String uvIsikSiddeti, String isikMesafesi, String muayeneBolgesi, String akimTipi) {
+        this.akimTipi=akimTipi;
+        this.cihazAdi=cihazAdi;
+        this.isikMesafesi=isikMesafesi;
+        this.kutupMesafesi=kutupMesafesi;
+        this.miknatislamaTeknigi=miknatislamaTeknigi;
+        this.MPTasiyiciOrtam=MPTasiyiciOrtam;
+        this.muayeneBolgesi=muayeneBolgesi;
+        this.uvIsikSiddeti = uvIsikSiddeti;
+
+    }
+
+    private String kutupMesafesi;
+    private String cihazAdi;
+    private String MPTasiyiciOrtam;
+    private String miknatislamaTeknigi;
+    private String uvIsikSiddeti;
+    private String isikMesafesi;
+    private String muayeneBolgesi;
+    private String akimTipi;
+
+
     public String getKutupMesafesi() {
         return kutupMesafesi;
     }
 
-    public void setKutupMesafesi(String kutupMesafesi) {
-        this.kutupMesafesi = kutupMesafesi;
-    }
 
     public String getCihazAdi() {
         return cihazAdi;
     }
 
-    public void setCihazAdi(String cihazAdi) {
-        this.cihazAdi = cihazAdi;
-    }
 
     public String getMPTasiyiciOrtam() {
         return MPTasiyiciOrtam;
     }
 
-    public void setMPTasiyiciOrtam(String MPTasiyiciOrtam) {
-        this.MPTasiyiciOrtam = MPTasiyiciOrtam;
+
+    public String getMiknatislamaTeknigi() {
+        return miknatislamaTeknigi;
     }
 
-    public String getMıknatislamaTeknigi() {
-        return mıknatislamaTeknigi;
+
+    public String getUvIsikSiddeti() {
+        return uvIsikSiddeti;
     }
 
-    public void setMıknatislamaTeknigi(String mıknatislamaTeknigi) {
-        this.mıknatislamaTeknigi = mıknatislamaTeknigi;
-    }
-
-    public String getUvIsikTeknigi() {
-        return uvIsikTeknigi;
-    }
-
-    public void setUvIsikTeknigi(String uvIsikTeknigi) {
-        this.uvIsikTeknigi = uvIsikTeknigi;
-    }
 
     public String getIsikMesafesi() {
         return isikMesafesi;
-    }
-
-    public void setIsikMesafesi(String isikMesafesi) {
-        this.isikMesafesi = isikMesafesi;
     }
 
     public String getMuayeneBolgesi() {
         return muayeneBolgesi;
     }
 
-    public void setMuayeneBolgesi(String muayeneBolgesi) {
-        this.muayeneBolgesi = muayeneBolgesi;
-    }
 
     public String getAkimTipi() {
         return akimTipi;
     }
 
-    public void setAkimTipi(String akimTipi) {
-        this.akimTipi = akimTipi;
-    }
-
-    private String kutupMesafesi;
-    private String cihazAdi;
-    private String MPTasiyiciOrtam;
-    private String mıknatislamaTeknigi;
-    private String uvIsikTeknigi;
-    private String isikMesafesi;
-    private String muayeneBolgesi;
-    private String akimTipi;
 
 }

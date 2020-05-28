@@ -5,24 +5,24 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Home">
-   <BorderPane fx:id="borderPaneMain" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="989.0">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Home">
+   <BorderPane fx:id="borderPaneMain" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="1090.0">
       <left>
          <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" BorderPane.alignment="CENTER">
-            <Button fx:id="homePage" alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#homePage" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Templates">
+            <Button fx:id="homePage" alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#homePage" prefHeight="60.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Templates" VBox.vgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../icons/Note.png" />
                   </ImageView>
                </graphic>
                <VBox.margin>
-                  <Insets bottom="13.0" top="50.0" />
+                  <Insets bottom="13.0" top="20.0" />
                </VBox.margin>
                <padding>
                   <Insets top="10.0" />
                </padding>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#kisiEkleDegistir" onMouseEntered="#renkDegistir" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Kişi Ekle/Değiştir">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#kisiEkleDegistir" onMouseEntered="#renkDegistir" prefHeight="60.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Kişi Ekle/Değiştir" VBox.vgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../icons/User.png" />
@@ -35,7 +35,7 @@
                   <Insets top="20.0" />
                </padding>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Ekipman Ekle/Değiştir">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ekipmanEkleDegistir" prefHeight="60.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Ekipman Ekle/Değiştir" VBox.vgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../icons/Fllopy.png" />
@@ -48,7 +48,7 @@
                   <Insets top="20.0" />
                </padding>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Şirket Ekle/Değiştir">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Şirket Ekle/Değiştir" VBox.vgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../icons/Analytics.png" />
@@ -61,7 +61,7 @@
                   <Insets top="20.0" />
                </padding>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Seçenekler">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Seçenekler" VBox.vgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../icons/AdjustType2.png" />

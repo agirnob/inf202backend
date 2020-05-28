@@ -27,14 +27,14 @@ public class Home implements Initializable {
 
     public void homePage(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/Home.fxml"));
-        Main.mainScene= new Scene(root);
+        Main.mainScene = new Scene(root);
         Main.window.setScene(Main.mainScene);
     }
 
     public void kisiEkleDegistir(ActionEvent actionEvent) throws IOException {
 
-       Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/KisiEkleDegistir.fxml"));
-       borderPaneMain.setCenter(root);
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/KisiEkleDegistir.fxml"));
+        borderPaneMain.setCenter(root);
 
 
     }
@@ -50,6 +50,12 @@ public class Home implements Initializable {
     public void open(ActionEvent actionEvent) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/TemplateGecis.fxml"));
+        borderPaneMain.setCenter(root);
+    }
+
+    public void ekipmanEkleDegistir(ActionEvent actionEvent) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/EkipmanBilgileri.fxml"));
         borderPaneMain.setCenter(root);
     }
 }

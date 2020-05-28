@@ -21,12 +21,6 @@ public class Kullanici {
     }
     public Kullanici(){}
 
-
-
-
-
-
-
     public String getIsim() {
         return isim;
     }

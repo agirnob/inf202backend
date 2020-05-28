@@ -54,12 +54,6 @@ public class TemplateGecis extends Home implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        iliceList.add("");
-        iliceList.add("");
-        System.out.println(iliceList.size());
-        autoComplateIl.setTooltip(new Tooltip());
-        autoComplateIl.getItems().addAll(LISTA);
-        new ComboBoxAutoComplete<String>(autoComplateIl);
 
     }
 
@@ -69,7 +63,6 @@ public class TemplateGecis extends Home implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../fxmlFiles/TemplateBir.fxml"));
         Parent root = loader.load();
         TemplateBir tb = (TemplateBir) loader.getController();
-        tb.setField(autoComplateIlce.getValue(), autoComplateIl.getValue());
         ((BorderPane) (((Button) actionEvent.getSource()).getScene().getRoot().lookup("#borderPaneMain"))).setCenter(root);
 
     }
