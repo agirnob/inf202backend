@@ -58,6 +58,7 @@ public class DBManager {
     public void deleteUserDB(String tablo, String silinenYer, String silinecek) throws SQLException {
         Statement stmt = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet rs = stmt.executeQuery("SELECT * FROM " + tablo + " WHERE " + silinenYer + " = " + "'" + silinecek + "'");
+        System.out.println(rs);
         System.out.println("çalışmıyor");
         if (rs.next()) {
             System.out.println("çalışıyor");

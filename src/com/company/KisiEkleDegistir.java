@@ -39,7 +39,7 @@ public class KisiEkleDegistir implements Initializable {
     @FXML
     protected Button updateButton;
     @FXML
-    protected TextField degistir_soyisim,degistir_seviye,degistir_ikullanici,degistir_isim,kullaniciAdi_Deg;
+    protected TextField degistir_soyisim,degistir_seviye,degistir_ikullanici,degistir_isim, kullaniciAdi_Deg;
     @FXML
     protected PasswordField degistir_sifreS;
 
@@ -111,12 +111,13 @@ public class KisiEkleDegistir implements Initializable {
         String sql = "UPDATE " + tableName + " SET isim ='" + degistir_isim.getText() + "' , soyisim = '" + degistir_soyisim.getText() +
                 "', seviye = '" + degistir_seviye.getText() + "' , password = '" + degistir_sifreS.getText()
                 + "', kullaniciAdi = '" + degistir_ikullanici.getText() + "'";
+
         sql = sql + " WHERE kullaniciAdi = " + "'"+kullaniciAdi_Deg.getText()+"'";
         PreparedStatement pstmt = DBManager.getConn().prepareStatement(sql);
         try {
             pstmt.execute();
             refreshTableView();
-        }catch (org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException e) {
+        } catch (org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException e) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Aynı kullanıcı girilmesi");
             errorAlert.setContentText("Aynı kullanıcı adına sahip kişi oluşturamazsınız");
