@@ -6,10 +6,7 @@ import com.company.Kullanici;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -19,7 +16,10 @@ public class EkipmanBilgileri implements Initializable {
     public ComboBox akimTipi;
     public TextField kutupMesafesi, MPTasiyiciOrtam, miknatislamaTeknigi, UVIsikSiddeti, isikMesafesi, muayeneBolgesi, ekipmanIsmi;
     public Button ekle;
-    private String tableName = "ekipmanT";
+    public TableColumn d_ekipmanIsmi,d_MiknatislamaTeknigi,d_IsikMesafesi,d_MuayeneTeknigi,d_KutupMesafesi,d_MPTasiyiciOrtam,d_UVIsikSiddeti,d_AkimTipi;
+    public TextField deg_EkipmanIsmi,deg_EkipmanIsmiC,deg_MiknatıislamaTeknigi,deg_IsikMesafesi,deg_MuayeneBolgesi,deg_MPTasiyiciOrtam,deg_KutupMesafesi,deg_UVIsikSiddeti;
+    public ComboBox deg_AkimTipi;
+    private final String tableName = "ekipmanT";
     private String select = "SELECT * FROM " + tableName;
     private ObservableList<Kullanici> data = FXCollections.observableArrayList();
 
@@ -76,8 +76,6 @@ public class EkipmanBilgileri implements Initializable {
 
     public void ekipmanSil() throws SQLException {
         DBManager db = new DBManager();
-      //  db.deleteUserDB(tableName,"ekipmanIsmi",ekipman_Degistir.getText());
-      //  refreshTableView();
 
     }
 

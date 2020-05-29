@@ -35,10 +35,6 @@ public class TemplateGecis extends Home implements Initializable {
 
     private final String select = "SELECT * FROM " + tableName;
 
-    @FXML
-    private ComboBox<String> autoComplateIl;
-    @FXML
-    private ComboBox<String> autoComplateIlce;
     private static final String[] LISTA = {"Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Aksaray", "Amasya", "Ankara", "Antalya",
             "Ardahan", "Artvin", "Aydın", "Balıkesir", "Bartın", "Batman", "Bayburt", "Bilecik", "Bingöl", "Bitlis", "Bolu",
             "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Düzce", "Edirne", "Elazığ", "Erzincan",
@@ -67,47 +63,6 @@ public class TemplateGecis extends Home implements Initializable {
 
     }
 
-    public void ilSec(ActionEvent actionEvent) {
-        int x = 0;
-        x = autoComplateIl.getSelectionModel().getSelectedIndex() + 1;
-        System.out.println(x);
-        ilIlceSwitch(x);
-    }
-
-    public void ilceSec(ActionEvent actionEvent) throws SQLException {
-        iliceList.set(1, autoComplateIlce.getValue());
-        System.out.println(IlIlceArray.ilIlce);
-        DBManager db = new DBManager();
-        db.deleteUserDB(tableName, "il", "adana");
-    }
-
-    public void ilIlceSwitch(int x) {
-        switch (x) {
-            case 1:
-
-                autoComplateIlce.setTooltip(new Tooltip());
-                autoComplateIlce.getItems().setAll(Ilceler.getAdanaIlce());
-                new ComboBoxAutoComplete<String>(autoComplateIlce);
-                autoComplateIlce.getSelectionModel().selectFirst();
-                iliceList.set(0, autoComplateIl.getValue());
-                break;
-            case 2:
-                autoComplateIlce.setTooltip(new Tooltip());
-                autoComplateIlce.getItems().setAll(Ilceler.getAdıyaman());
-                new ComboBoxAutoComplete<String>(autoComplateIlce);
-                autoComplateIlce.getSelectionModel().selectFirst();
-                iliceList.set(0, autoComplateIl.getValue());
-                break;
-            case 3:
-                autoComplateIlce.getItems().removeAll();
-                autoComplateIlce.setTooltip(new Tooltip());
-                autoComplateIlce.getItems().setAll(Ilceler.getAfyonkarahisar());
-                new ComboBoxAutoComplete<String>(autoComplateIlce);
-                autoComplateIlce.getSelectionModel().selectFirst();
-                iliceList.set(0, autoComplateIl.getValue());
-                break;
-        }
-    }
 }
 
 

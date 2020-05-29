@@ -114,7 +114,6 @@ public class KisiEkleDegistir implements Initializable {
         DBManager db = new DBManager();
         db.deleteUserDB(tableName,"kullaniciAdi",kullaniciAdi_Deg.getText());
         refreshTableView();
-
     }
 
     public void kisiUpdate() throws SQLException {

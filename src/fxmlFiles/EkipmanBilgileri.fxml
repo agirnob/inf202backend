@@ -18,7 +18,7 @@
                         <TextField fx:id="isikMesafesi" layoutX="75.0" layoutY="200.0" promptText="ışık mesafesi" />
                         <TextField fx:id="muayeneBolgesi" layoutX="75.0" layoutY="259.0" promptText="Muayene Bölgesi" />
                         <ComboBox fx:id="akimTipi" layoutX="320.0" layoutY="259.0" prefWidth="150.0" promptText="Akım Tİpi" />
-                        <Button fx:id="ekle" layoutX="254.0" layoutY="336.0" mnemonicParsing="false" text="ekle" />
+                        <Button fx:id="ekle" layoutX="254.0" layoutY="336.0" mnemonicParsing="false" onAction="#ekipmanEkle" text="ekle" />
                         <TextField fx:id="ekipmanIsmi" layoutX="75.0" layoutY="78.0" promptText="Ekipman İsmi" />
                      </children>
                   </AnchorPane>
@@ -42,17 +42,17 @@
                         </TableView>
                         <Separator layoutX="-43.0" layoutY="226.0" prefHeight="13.0" prefWidth="877.0" />
                         <Label layoutX="14.0" layoutY="179.0" text="Ekipman Değiştir/Çıkar" />
-                        <TextField layoutX="14.0" layoutY="198.0" promptText="Ekipman İsmi" />
+                        <TextField fx:id="deg_EkipmanIsmi" layoutX="14.0" layoutY="198.0" promptText="Ekipman İsmi" />
                         <Button layoutX="217.0" layoutY="200.0" mnemonicParsing="false" text="Ekipmanı Sil" />
-                        <TextField layoutX="14.0" layoutY="239.0" promptText="Ekipman İsmi" />
-                        <TextField layoutX="14.0" layoutY="278.0" promptText="Mıknatıslama Tekniği" />
-                        <TextField layoutX="14.0" layoutY="320.0" promptText="Işık Mesafesi" />
-                        <TextField layoutX="14.0" layoutY="360.0" promptText="Muayene Bölgesi" />
-                        <TextField layoutX="217.0" layoutY="278.0" promptText="MPTaşıyıcı Ortam" />
-                        <TextField layoutX="217.0" layoutY="239.0" promptText="Kutup Mesafesi" />
-                        <ComboBox layoutX="217.0" layoutY="360.0" prefWidth="150.0" promptText="Akım Tipi" />
+                        <TextField fx:id="deg_EkipmanIsmiC" layoutX="14.0" layoutY="239.0" promptText="Ekipman İsmi" />
+                        <TextField fx:id="deg_MiknatıislamaTeknigi" layoutX="14.0" layoutY="278.0" promptText="Mıknatıslama Tekniği" />
+                        <TextField fx:id="deg_IsikMesafesi" layoutX="14.0" layoutY="320.0" promptText="Işık Mesafesi" />
+                        <TextField fx:id="deg_MuayeneBolgesi" layoutX="14.0" layoutY="360.0" promptText="Muayene Bölgesi" />
+                        <TextField fx:id="deg_MPTasiyiciOrtam" layoutX="217.0" layoutY="278.0" promptText="MPTaşıyıcı Ortam" />
+                        <TextField fx:id="deg_KutupMesafesi" layoutX="217.0" layoutY="239.0" promptText="Kutup Mesafesi" />
+                        <ComboBox fx:id="deg_AkimTipi" layoutX="217.0" layoutY="360.0" prefWidth="150.0" promptText="Akım Tipi" />
                         <Button layoutX="417.0" layoutY="360.0" mnemonicParsing="false" text="Ekipmanı Güncelle" />
-                        <TextField layoutX="217.0" layoutY="320.0" promptText="UV Işık Şiddeti" />
+                        <TextField fx:id="deg_UVIsikSiddeti" layoutX="217.0" layoutY="320.0" promptText="UV Işık Şiddeti" />
                      </children></AnchorPane>
             </content>
           </Tab>
