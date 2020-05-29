@@ -24,11 +24,11 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Değiştir/Çıkar">
+          <Tab onSelectionChanged="#refreshTableView" text="Değiştir/Çıkar">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="434.0" prefWidth="600.0">
                      <children>
-                        <TableView layoutX="6.0" layoutY="6.0" prefHeight="165.0" prefWidth="821.0">
+                        <TableView fx:id="ekipmanTable" layoutX="6.0" layoutY="6.0" prefHeight="165.0" prefWidth="821.0">
                           <columns>
                             <TableColumn fx:id="d_ekipmanIsmi" prefWidth="105.0" text="Ekipman İsmi" />
                             <TableColumn fx:id="d_MiknatislamaTeknigi" minWidth="0.0" prefWidth="96.0" text="Mıknatıslama tekniği" />
@@ -45,7 +45,7 @@
                         <TextField fx:id="deg_EkipmanIsmi" layoutX="14.0" layoutY="198.0" promptText="Ekipman İsmi" />
                         <Button layoutX="217.0" layoutY="200.0" mnemonicParsing="false" text="Ekipmanı Sil" />
                         <TextField fx:id="deg_EkipmanIsmiC" layoutX="14.0" layoutY="239.0" promptText="Ekipman İsmi" />
-                        <TextField fx:id="deg_MiknatıislamaTeknigi" layoutX="14.0" layoutY="278.0" promptText="Mıknatıslama Tekniği" />
+                        <TextField fx:id="deg_MiknatislamaTeknigi" layoutX="14.0" layoutY="278.0" promptText="Mıknatıslama Tekniği" />
                         <TextField fx:id="deg_IsikMesafesi" layoutX="14.0" layoutY="320.0" promptText="Işık Mesafesi" />
                         <TextField fx:id="deg_MuayeneBolgesi" layoutX="14.0" layoutY="360.0" promptText="Muayene Bölgesi" />
                         <TextField fx:id="deg_MPTasiyiciOrtam" layoutX="217.0" layoutY="278.0" promptText="MPTaşıyıcı Ortam" />

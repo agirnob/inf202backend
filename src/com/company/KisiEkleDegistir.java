@@ -35,19 +35,11 @@ public class KisiEkleDegistir implements Initializable {
     @FXML
     protected TableColumn <Kullanici,String>d_kullanici;
     @FXML
-    protected TextField kullaniciAdi_Deg;
-    @FXML
     protected Button kisiyiSil;
     @FXML
     protected Button updateButton;
     @FXML
-    protected TextField degistir_isim;
-    @FXML
-    protected TextField degistir_soyisim;
-    @FXML
-    protected TextField degistir_seviye;
-    @FXML
-    protected TextField degistir_ikullanici,degistir_sifre;
+    protected TextField degistir_soyisim,degistir_seviye,degistir_ikullanici,degistir_isim,kullaniciAdi_Deg;
     @FXML
     protected PasswordField degistir_sifreS;
 
@@ -75,7 +67,6 @@ public class KisiEkleDegistir implements Initializable {
 
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(e);
         }
 
 
@@ -106,7 +97,6 @@ public class KisiEkleDegistir implements Initializable {
             errorAlert.showAndWait();
         }
 
-        System.out.println("inserted");
 
     }
 
