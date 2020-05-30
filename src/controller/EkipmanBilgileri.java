@@ -33,14 +33,16 @@ public class EkipmanBilgileri implements Initializable {
     public TextField deg_EkipmanIsmi, deg_EkipmanIsmiC, deg_MiknatislamaTeknigi, deg_IsikMesafesi, deg_MuayeneBolgesi, deg_MPTasiyiciOrtam, deg_KutupMesafesi, deg_UVIsikSiddeti;
     public ComboBox deg_AkimTipi;
     public TableView<Ekipman> ekipmanTable;
-    private final String tableName = "ekipmanT2";
+    public static final String tableName = "ekipmanT2";
     private String select = "SELECT * FROM " + tableName;
     private ObservableList<Ekipman> data = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         akimTipi.setItems(FXCollections.observableArrayList("AC", "DC"));
+        akimTipi.getSelectionModel().selectFirst();
         deg_AkimTipi.setItems(FXCollections.observableArrayList("AC", "DC"));
+        deg_AkimTipi.getSelectionModel().selectFirst();
 
         DBManager db = new DBManager();
         try {
@@ -117,7 +119,6 @@ public class EkipmanBilgileri implements Initializable {
         refreshTableView();
     }
 
-
     public void refreshTableView() {
         try {
             Connection con = DBManager.getConn();
@@ -160,5 +161,6 @@ public class EkipmanBilgileri implements Initializable {
             deg_MuayeneBolgesi.setText(user.getMuayeneBolgesi());
         }
     }
+
 }
 
