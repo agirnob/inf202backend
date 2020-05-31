@@ -44,7 +44,7 @@
         </Tab>
         <Tab fx:id="degistirButoon" onSelectionChanged="#refreshTableView" text="Kişi Değiştir/Çıkar">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="458.0" prefWidth="572.0">
-            <TableView fx:id="degistirDB" layoutX="19.0" layoutY="22.0" onMouseClicked="#displayView" prefHeight="143.0" prefWidth="548.0" AnchorPane.leftAnchor="19.0" AnchorPane.rightAnchor="5.0">
+            <TableView fx:id="degistirDB" layoutX="12.0" layoutY="20.0" onMouseClicked="#displayView" prefHeight="143.0" prefWidth="548.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
                <columns>
                   <TableColumn fx:id="d_isim" minWidth="-Infinity" prefWidth="137.0" resizable="false" text="İsim" />
                   <TableColumn fx:id="d_soyisim" minWidth="-Infinity" prefWidth="137.0" resizable="false" text="Soyisim" />

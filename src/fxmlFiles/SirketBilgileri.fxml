@@ -11,46 +11,47 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField layoutX="43.0" layoutY="40.0" />
+                        <TextField fx:id="musteriIsmi" layoutX="43.0" layoutY="40.0" />
                         <Label layoutX="43.0" layoutY="26.0" text="Müşteri" />
                         <Label layoutX="43.0" layoutY="85.0" text="İl" />
                         <Label layoutX="43.0" layoutY="142.0" text="İlçe" />
-                        <TextField layoutX="43.0" layoutY="225.0" />
+                        <TextField fx:id="teklifNo" layoutX="43.0" layoutY="225.0" />
                         <Label layoutX="43.0" layoutY="211.0" text="Teklif No." />
-                        <TextField layoutX="43.0" layoutY="290.0" />
+                        <TextField fx:id="isEmriNo" layoutX="43.0" layoutY="290.0" />
                         <Label layoutX="43.0" layoutY="276.0" text="İş Emri No." />
                         <Separator layoutX="597.0" layoutY="-34.0" orientation="VERTICAL" prefHeight="421.0" prefWidth="6.0" />
                         <ComboBox fx:id="ilComboBox" layoutX="44.0" layoutY="101.0" prefWidth="150.0" />
                         <ComboBox fx:id="ilceComboBox" layoutX="42.0" layoutY="158.0" prefWidth="150.0" />
                         <Button layoutX="203.0" layoutY="101.0" mnemonicParsing="false" text="Seç" />
                         <Button layoutX="203.0" layoutY="158.0" mnemonicParsing="false" text="Seç" />
+                        <Button layoutX="269.0" layoutY="316.0" mnemonicParsing="false" onAction="#sirketEkle" text="Ekle" />
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Şirket Değiştir/Çıkar">
+          <Tab onSelectionChanged="#refreshTableView" text="Şirket Değiştir/Çıkar">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="6.0" prefHeight="185.0" prefWidth="588.0">
+                        <TableView fx:id="sirketTable" layoutX="6.0" onMouseClicked="#displayView" prefHeight="185.0" prefWidth="588.0">
                           <columns>
-                            <TableColumn prefWidth="143.0" text="Müşteri Adı" />
-                            <TableColumn prefWidth="107.0" text="İl" />
-                              <TableColumn prefWidth="145.0" text="İlçe" />
-                              <TableColumn prefWidth="86.0" text="Tekif No." />
-                              <TableColumn prefWidth="106.0" text="Proje No." />
+                            <TableColumn fx:id="d_musteriAdi" prefWidth="143.0" text="Müşteri Adı" />
+                            <TableColumn fx:id="d_Il" prefWidth="107.0" text="İl" />
+                              <TableColumn fx:id="d_Ilce" prefWidth="145.0" text="İlçe" />
+                              <TableColumn fx:id="d_TeklifNo" prefWidth="86.0" text="Teklif No." />
+                              <TableColumn fx:id="d_ProjeNo" prefWidth="106.0" text="Proje No." />
                           </columns>
                         </TableView>
                         <Separator layoutX="-11.0" layoutY="239.0" prefHeight="3.0" prefWidth="693.0" />
                         <Separator layoutX="598.0" orientation="VERTICAL" prefHeight="372.0" prefWidth="5.0" />
                         <Label layoutX="14.0" layoutY="192.0" text="Şirket Değiştir/Çıkar" />
-                        <TextField layoutX="14.0" layoutY="208.0" />
-                        <Button layoutX="211.0" layoutY="208.0" mnemonicParsing="false" text="Button" />
-                        <TextField layoutX="100.0" layoutY="242.0" />
-                        <TextField layoutX="100.0" layoutY="278.0" />
-                        <TextField layoutX="100.0" layoutY="317.0" />
-                        <TextField layoutX="369.0" layoutY="242.0" />
-                        <TextField layoutX="369.0" layoutY="278.0" />
-                        <Button layoutX="424.0" layoutY="317.0" mnemonicParsing="false" text="Değiştir" />
+                        <TextField fx:id="deg_MusteriAdi" layoutX="14.0" layoutY="208.0" />
+                        <Button fx:id="musteriSil" layoutX="211.0" layoutY="208.0" mnemonicParsing="false" onAction="#sirketSil" text="Müşteri Sil" />
+                        <TextField fx:id="deg_MusteriAdiC" layoutX="100.0" layoutY="242.0" />
+                        <TextField fx:id="deg_Il" layoutX="100.0" layoutY="278.0" />
+                        <TextField fx:id="deg_Ilce" layoutX="100.0" layoutY="317.0" />
+                        <TextField fx:id="deg_Proje" layoutX="369.0" layoutY="242.0" />
+                        <TextField fx:id="deg_TeklifNo" layoutX="369.0" layoutY="278.0" />
+                        <Button layoutX="424.0" layoutY="317.0" mnemonicParsing="false" onAction="#sirketUpdate" text="Değiştir" />
                         <Label layoutX="14.0" layoutY="247.0" text="Müşteri Adı" />
                         <Label layoutX="76.0" layoutY="283.0" text="İl" />
                         <Label layoutX="65.0" layoutY="322.0" text="İlçe" />

@@ -6,6 +6,7 @@ import com.company.Kullanici;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -64,8 +65,8 @@ public class EkipmanBilgileri implements Initializable {
             System.out.println(e);
         }
     }
-
-    public void ekipmanUpdate() throws SQLException {
+    @FXML
+    private void ekipmanUpdate() throws SQLException {
 
         String sql = "UPDATE " + tableName + " SET kutupMesafesi ='" + deg_KutupMesafesi.getText() + "' , isikMesafesi = '" +
                 deg_IsikMesafesi.getText() + "', MPTasiyiciOrtam = '" + deg_MPTasiyiciOrtam.getText()
@@ -86,8 +87,8 @@ public class EkipmanBilgileri implements Initializable {
             errorAlert.showAndWait();
         }
     }
-
-    public void ekipmanEkle() {
+    @FXML
+    private void ekipmanEkle() {
         DBManager db = new DBManager();
         Ekipman ekipman = new Ekipman(kutupMesafesi.getText(), ekipmanIsmi.getText(), MPTasiyiciOrtam.getText(), miknatislamaTeknigi.getText(), UVIsikSiddeti.getText(), isikMesafesi.getText(), muayeneBolgesi.getText(), akimTipi.getValue().toString());
 
@@ -112,14 +113,14 @@ public class EkipmanBilgileri implements Initializable {
         }
 
     }
-
-    public void ekipmanSil() throws SQLException {
+    @FXML
+    private void ekipmanSil() throws SQLException {
         DBManager db = new DBManager();
         db.deleteUserDB(tableName, "ekipmanIsmi", deg_EkipmanIsmi.getText());
         refreshTableView();
     }
-
-    public void refreshTableView() {
+    @FXML
+    private void refreshTableView() {
         try {
             Connection con = DBManager.getConn();
             ResultSet rs = con.createStatement().executeQuery(select);
@@ -128,13 +129,16 @@ public class EkipmanBilgileri implements Initializable {
                 ekipmanTable.getItems().clear();
             }
             while (rs.next()) {
-                data.add(new Ekipman(rs.getString("kutupMesafesi"), rs.getString("ekipmanIsmi"), rs.getString("MPTasiyiciOrtam"),
-                        rs.getString("miknatislamaTeknigi"), rs.getString("UVIsikSiddeti"), rs.getString("isikMesafesi"),
+                data.add(new Ekipman(
+                        rs.getString("kutupMesafesi"), rs.getString("ekipmanIsmi"),
+                        rs.getString("MPTasiyiciOrtam"),rs.getString("miknatislamaTeknigi"),
+                        rs.getString("UVIsikSiddeti"), rs.getString("isikMesafesi"),
                         rs.getString("muayeneBolgesi"), rs.getString("akimTipi")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         d_ekipmanIsmi.setCellValueFactory(new PropertyValueFactory<>("cihazAdi"));
         d_AkimTipi.setCellValueFactory(new PropertyValueFactory<>("akimTipi"));
         d_IsikMesafesi.setCellValueFactory(new PropertyValueFactory<>("isikMesafesi"));
@@ -145,8 +149,8 @@ public class EkipmanBilgileri implements Initializable {
         d_UVIsikSiddeti.setCellValueFactory(new PropertyValueFactory<>("uvIsikSiddeti"));
         ekipmanTable.setItems(data);
     }
-
-    public void displayView(MouseEvent mouseEvent) {
+    @FXML
+    private void displayView(MouseEvent mouseEvent) {
         Ekipman user = ekipmanTable.getSelectionModel().getSelectedItem();
         if (user == null) {
             deg_EkipmanIsmi.setText("Nichts gewahlt");
