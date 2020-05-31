@@ -58,4 +58,9 @@ public class Home implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/EkipmanBilgileri.fxml"));
         borderPaneMain.setCenter(root);
     }
+
+    public void sirketEkleDegistir(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../../fxmlFiles/SirketBilgileri.fxml"));
+        borderPaneMain.setCenter(root);
+    }
 }

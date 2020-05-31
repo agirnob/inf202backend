@@ -48,7 +48,7 @@
                   <Insets top="20.0" />
                </padding>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Şirket Ekle/Değiştir" VBox.vgrow="ALWAYS">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sirketEkleDegistir" prefHeight="60.0" prefWidth="227.0" style="-fx-background-color: #2bc6a5;" text="Şirket Ekle/Değiştir" VBox.vgrow="ALWAYS">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@../icons/Analytics.png" />

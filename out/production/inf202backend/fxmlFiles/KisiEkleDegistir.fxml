@@ -51,13 +51,7 @@
                   <TableColumn fx:id="d_seviye" minWidth="-Infinity" prefWidth="137.0" resizable="false" text="Seviye" />
                   <TableColumn fx:id="d_kullanici" minWidth="-Infinity" prefWidth="137.0" resizable="false" text="Kullanıcı Adı" />
                </columns></TableView>
-                <Pane layoutX="12.0" layoutY="154.0" prefHeight="49.0" prefWidth="548.0" AnchorPane.bottomAnchor="209.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="154.0">
-                    <Label layoutX="14.0" layoutY="15.0" prefHeight="28.0" prefWidth="166.0" text="Kişi Değiştir/Çıkar">
-                        <font>
-                            <Font name="Hack Bold" size="13.0" />
-                        </font>
-                    </Label>
-                </Pane>
+                <Pane layoutX="12.0" layoutY="171.0" prefHeight="16.0" prefWidth="548.0" AnchorPane.bottomAnchor="247.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="171.0" />
                  <Button fx:id="updateButton" layoutX="286.0" layoutY="304.0" mnemonicParsing="false" onAction="#kisiUpdate" text="Kişiyi Güncelle">
                      <tooltip>
                          <Tooltip />
