@@ -5,12 +5,11 @@
 
 <AnchorPane fx:id="templateGecis" prefHeight="400.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.TemplateGecis">
    <children>
-      <DatePicker fx:id="tarih" layoutX="110.0" layoutY="123.0" onAction="#tarihAction" />
-      <ChoiceBox layoutX="110.0" layoutY="174.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="projeAdi" layoutX="110.0" layoutY="174.0" prefWidth="150.0" />
       <Label layoutX="66.0" layoutY="78.0" text="firma" />
       <Label layoutX="66.0" layoutY="128.0" text="tarih" />
       <Label layoutX="43.0" layoutY="179.0" text="Proje Adı" />
-      <ChoiceBox layoutX="110.0" layoutY="216.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="yuzeyDurumu" layoutX="110.0" layoutY="216.0" prefWidth="150.0" />
       <Label layoutX="7.0" layoutY="221.0" text="Yüzey durumu" />
       <Label layoutX="367.0" layoutY="78.0" text="Ekipman" />
       <Button layoutX="243.0" layoutY="320.0" mnemonicParsing="false" onAction="#gecis" text="Tamam" />
@@ -22,5 +21,6 @@
       <Label layoutX="388.0" layoutY="221.0" text="Onay" />
       <ComboBox fx:id="onayCoboBox" layoutX="434.0" layoutY="216.0" prefWidth="150.0" />
       <ComboBox fx:id="firmaComboBox" layoutX="110.0" layoutY="73.0" prefHeight="26.0" prefWidth="198.0" />
+      <DatePicker fx:id="tarih" layoutX="102.0" layoutY="123.0" />
    </children>
 </AnchorPane>

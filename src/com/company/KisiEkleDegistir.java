@@ -43,7 +43,7 @@ public class KisiEkleDegistir implements Initializable {
     @FXML
     protected PasswordField degistir_sifreS;
 
-    public static String tableName = "denememi";
+    public final static String tableName = "denememi";
     private String select = "SELECT * FROM " + tableName;
     private ObservableList<Kullanici> data = FXCollections.observableArrayList();
 
