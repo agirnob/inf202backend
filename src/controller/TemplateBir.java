@@ -1,6 +1,8 @@
 package controller;
 
+import agirnob.ExcellExport;
 import com.company.DBManager;
+import com.company.KisiEkleDegistir;
 import com.company.MuayeneSonuclari;
 import com.company.Sirket;
 import javafx.collections.FXCollections;
@@ -14,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,6 +45,15 @@ public class TemplateBir implements Initializable {
     public TextField deg_Kontrol;
     public TextField deg_Kaynak;
     public ChoiceBox deg_Sonuc;
+    public Label operatorAd;
+    public Label operatorSeviye;
+    public Label tarih;
+    public Label tarihD;
+    public Label tarihON;
+    public Label degerlendirenAd;
+    public Label onayAd;
+    public Label degerlendirenSeviye;
+    public Label onaySeviye;
     @FXML
     private TableColumn<MuayeneSonuclari, String> kaynakColumn, uzunColumn, yonColumn, kalinlikColumn, capColumn, hataTipColumn, hataYerColumn, sonucColumn;
 
@@ -55,6 +67,8 @@ public class TemplateBir implements Initializable {
     ObservableList<String> ekipman = FXCollections.observableArrayList();
     ObservableList<String> sirket = FXCollections.observableArrayList();
     ObservableList<String> kullanici = FXCollections.observableArrayList();
+    ObservableList<MuayeneSonuclari> muayeneSonuclaris = FXCollections.observableArrayList();
+
 
 
     public void setField(String Tarih, String ekipman, String onay, String degerlendiren, String operator, String firma, String proje, String yuzey) {
@@ -64,11 +78,16 @@ public class TemplateBir implements Initializable {
         projeAdiTextField.setText(proje);
         Statement stmtEkipman = null;
         Statement stmtKullanıcı = null;
+        Statement stmtKullanıcı2 = null;
+        Statement stmtKullanıcı3 = null;
         Statement stmtFirma = null;
+
         akimTipiComboBox.setItems(FXCollections.observableArrayList("AC", "DC"));
         try {
             stmtEkipman = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             stmtKullanıcı = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            stmtKullanıcı2 = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            stmtKullanıcı3 = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             stmtFirma = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
             ResultSet rsF = stmtFirma.executeQuery("SELECT * FROM " + SirketBilgileri.tableName + " WHERE MusteriIsmi = " + "'" + firma + "'");
@@ -94,20 +113,47 @@ public class TemplateBir implements Initializable {
                     akimTipiComboBox.getSelectionModel().selectLast();
                 }
             }
-
+            ResultSet rsK = stmtKullanıcı.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + operator + "'");
+            while (rsK.next()){
+                operatorSeviye.setText(rsK.getString("seviye"));
+                operatorAd.setText(rsK.getString("isim") + " " +rsK.getString("soyisim"));
+            }
+            ResultSet rsK1 = stmtKullanıcı2.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + degerlendiren + "'");
+            while (rsK1.next()){
+                degerlendirenSeviye.setText(rsK1.getString("seviye"));
+                degerlendirenAd.setText(rsK1.getString("isim") +" " + rsK1.getString("soyisim"));
+            }
+            ResultSet rsK2 = stmtKullanıcı3.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + onay + "'");
+            while (rsK2.next()){
+                onaySeviye.setText(rsK2.getString("seviye"));
+                onayAd.setText(rsK2.getString("isim") + " " + rsK2.getString("soyisim"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        tarih.setText(Tarih);
+        tarihD.setText(Tarih);
+        tarihON.setText(Tarih);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        operatorAd.setText("deneme");
         sonucAddText.setItems(FXCollections.observableArrayList("OK", "RED"));
         deg_Sonuc.setItems(FXCollections.observableArrayList("OK", "RED"));
-    }
 
-    ObservableList<MuayeneSonuclari> muayeneSonuclaris = FXCollections.observableArrayList();
+        Statement stmt = null;
+        Statement stmt2 = null;
+        Statement stmt3 = null;
+
+
+
+
+
+
+
+
+    }
 
     @FXML
     private void delete() {
@@ -149,5 +195,13 @@ public class TemplateBir implements Initializable {
 
     public void degistir(ActionEvent actionEvent) {
         muayeneSonuclaris.set(muayeneSonuclariTableView.getSelectionModel().getFocusedIndex(),new MuayeneSonuclari(deg_Kaynak.getText(),deg_Kontrol.getText(),deg_Yon.getText(),deg_Kalin.getText(),deg_Cap.getText(),deg_HataTip.getText(),deg_HataYer.getText(),deg_Sonuc.getValue().toString()));
+    }
+
+    public void exportExcell(ActionEvent actionEvent) throws IOException {
+        ExcellExport ee = new ExcellExport();
+        ee.excelExpo();
+    }
+
+    public void exportPdf(ActionEvent actionEvent) {
     }
 }

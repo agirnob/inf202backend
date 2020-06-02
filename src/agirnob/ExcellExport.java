@@ -19,21 +19,38 @@ package agirnob;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-
-
+import java.io.InputStream;
 
 
 @SuppressWarnings({"java:S106", "java:S4823", "java:S1192"})
 public final class ExcellExport {
 
     public void excelExpo() throws IOException {
+        InputStream inputStream = this.getClass().getResourceAsStream("FR_02_MT.xlsx");
+        XSSFWorkbook workbook = (XSSFWorkbook) WorkbookFactory.create(inputStream);
+        XSSFSheet sheet = workbook.getSheetAt(0);
+        Row row = sheet.getRow(2);
+        Cell cell = row.getCell(3);
+        cell.setCellValue("deneme");
 
-        POIFSFileSystem fs = new POIFSFileSystem(
-                new FileInputStream("FR_02_MT.xls"));
-        HSSFWorkbook wb = new HSSFWorkbook(fs, true);
+        String file = System.getProperty("user.home");
+        if (workbook instanceof XSSFWorkbook) {
+            file += "/x.xlsx";
+        }
+        System.out.println(file);
+        FileOutputStream out = new FileOutputStream(file);
+        workbook.write(out);
+        out.close();
     }
 
 
