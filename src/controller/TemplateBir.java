@@ -1,13 +1,17 @@
 package controller;
 
 import com.company.DBManager;
+import com.company.MuayeneSonuclari;
+import com.company.Sirket;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -18,11 +22,31 @@ import java.util.ResourceBundle;
 
 public class TemplateBir implements Initializable {
     @FXML
-    public TextField ekipmanTextField,kutupMesafesiTextField,MPTasiyiciOrtamTexyField,miknatislamaTeknigiTextField,UVIsikSiddetiTextField,isikMesafesiTextField,muayenBolgesiTextField;
+    public TextField ekipmanTextField, kutupMesafesiTextField, MPTasiyiciOrtamTexyField, miknatislamaTeknigiTextField, UVIsikSiddetiTextField, isikMesafesiTextField, muayenBolgesiTextField;
     public ComboBox akimTipiComboBox;
     public TextField projeAdiTextField;
+    public TableView<MuayeneSonuclari> muayeneSonuclariTableView;
+    public TextField hataTipiAddText;
+    public TextField hataninYeriAddYeri;
+    public TextField capAddText;
+    public TextField kalinlikAddText;
+    public TextField kontrolUzunAddText;
+    public TextField kaynakAddText;
+    public ComboBox sonucAddText;
+    public TextField kaynakYonAddText;
+    public TextField deg_HataTip;
+    public TextField deg_HataYer;
+    public TextField deg_Cap;
+    public TextField deg_Kalin;
+    public TextField deg_Yon;
+    public TextField deg_Kontrol;
+    public TextField deg_Kaynak;
+    public ChoiceBox deg_Sonuc;
     @FXML
-    private TextField firmaAdiTextField, teklifNoTextField, isEmriNoTextField,testYeriTextField;
+    private TableColumn<MuayeneSonuclari, String> kaynakColumn, uzunColumn, yonColumn, kalinlikColumn, capColumn, hataTipColumn, hataYerColumn, sonucColumn;
+
+    @FXML
+    private TextField firmaAdiTextField, teklifNoTextField, isEmriNoTextField, testYeriTextField;
     @FXML
     private AnchorPane templateBir;
     @FXML
@@ -47,7 +71,7 @@ public class TemplateBir implements Initializable {
             stmtKullanıcı = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             stmtFirma = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-            ResultSet rsF = stmtFirma.executeQuery("SELECT * FROM " + SirketBilgileri.tableName + " WHERE MusteriIsmi = " +"'" +firma +"'");
+            ResultSet rsF = stmtFirma.executeQuery("SELECT * FROM " + SirketBilgileri.tableName + " WHERE MusteriIsmi = " + "'" + firma + "'");
             while (rsF.next()) {
                 teklifNoTextField.setText(rsF.getString("TeklifNo"));
                 isEmriNoTextField.setText(rsF.getString("IsemriNo"));
@@ -55,7 +79,7 @@ public class TemplateBir implements Initializable {
                 testYeriTextField.appendText("/");
                 testYeriTextField.appendText(rsF.getString("Il"));
             }
-            ResultSet rsE = stmtEkipman.executeQuery("SELECT * FROM " + EkipmanBilgileri.tableName + " WHERE ekipmanIsmi = " +"'" +ekipman +"'");
+            ResultSet rsE = stmtEkipman.executeQuery("SELECT * FROM " + EkipmanBilgileri.tableName + " WHERE ekipmanIsmi = " + "'" + ekipman + "'");
             while (rsE.next()) {
                 ekipmanTextField.setText(rsE.getString("ekipmanIsmi"));
                 kutupMesafesiTextField.setText(rsE.getString("kutupMesafesi"));
@@ -64,9 +88,9 @@ public class TemplateBir implements Initializable {
                 UVIsikSiddetiTextField.setText(rsE.getString("UVIsikSiddeti"));
                 isikMesafesiTextField.setText(rsE.getString("isikMesafesi"));
                 muayenBolgesiTextField.setText(rsE.getString("muayeneBolgesi"));
-                if(rsE.getString("akimTipi").equals("AC")){
+                if (rsE.getString("akimTipi").equals("AC")) {
                     akimTipiComboBox.getSelectionModel().selectFirst();
-                }else {
+                } else {
                     akimTipiComboBox.getSelectionModel().selectLast();
                 }
             }
@@ -79,8 +103,51 @@ public class TemplateBir implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
-
+        sonucAddText.setItems(FXCollections.observableArrayList("OK", "RED"));
+        deg_Sonuc.setItems(FXCollections.observableArrayList("OK", "RED"));
     }
 
+    ObservableList<MuayeneSonuclari> muayeneSonuclaris = FXCollections.observableArrayList();
+
+    @FXML
+    private void delete() {
+        muayeneSonuclaris.remove(muayeneSonuclariTableView.getSelectionModel().getFocusedIndex());
+    }
+
+    public void addToTable(ActionEvent actionEvent) {
+        kaynakColumn.setCellValueFactory(new PropertyValueFactory<>("kaynak"));
+        uzunColumn.setCellValueFactory(new PropertyValueFactory<>("uzun"));
+        yonColumn.setCellValueFactory(new PropertyValueFactory<>("yon"));
+        kalinlikColumn.setCellValueFactory(new PropertyValueFactory<>("kalin"));
+        capColumn.setCellValueFactory(new PropertyValueFactory<>("cap"));
+        hataTipColumn.setCellValueFactory(new PropertyValueFactory<>("hata"));
+        hataYerColumn.setCellValueFactory(new PropertyValueFactory<>("hatayer"));
+        sonucColumn.setCellValueFactory(new PropertyValueFactory<>("sonuc"));
+
+
+        muayeneSonuclaris.add(new MuayeneSonuclari(kaynakAddText.getText(), kontrolUzunAddText.getText(), kaynakYonAddText.getText(), kalinlikAddText.getText(), capAddText.getText(), hataTipiAddText.getText(), hataninYeriAddYeri.getText(), sonucAddText.getValue().toString()));
+
+
+        muayeneSonuclariTableView.setItems(muayeneSonuclaris);
+    }
+
+
+    public void displayView(MouseEvent mouseEvent) {
+        deg_Cap.setText(muayeneSonuclariTableView.getSelectionModel().getSelectedItem().getCap());
+        deg_HataTip.setText(muayeneSonuclariTableView.getSelectionModel().getSelectedItem().getHata());
+        deg_HataYer.setText(muayeneSonuclariTableView.getSelectionModel().getSelectedItem().getHatayer());
+        deg_Kalin.setText(muayeneSonuclariTableView.getSelectionModel().getSelectedItem().getKalin());
+        deg_Kaynak.setText(muayeneSonuclariTableView.getSelectionModel().getSelectedItem().getKaynak());
+        deg_Kontrol.setText(muayeneSonuclariTableView.getSelectionModel().getSelectedItem().getUzun());
+        if (muayeneSonuclariTableView.getSelectionModel().getSelectedItem().getSonuc().equals("OK")) {
+            deg_Sonuc.getSelectionModel().selectFirst();
+        } else {
+            deg_Sonuc.getSelectionModel().selectLast();
+        }
+        deg_Yon.setText(muayeneSonuclariTableView.getSelectionModel().getSelectedItem().getYon());
+    }
+
+    public void degistir(ActionEvent actionEvent) {
+        muayeneSonuclaris.set(muayeneSonuclariTableView.getSelectionModel().getFocusedIndex(),new MuayeneSonuclari(deg_Kaynak.getText(),deg_Kontrol.getText(),deg_Yon.getText(),deg_Kalin.getText(),deg_Cap.getText(),deg_HataTip.getText(),deg_HataYer.getText(),deg_Sonuc.getValue().toString()));
+    }
 }

@@ -18,6 +18,10 @@ import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 public class TemplateGecis extends Home implements Initializable {
@@ -35,7 +39,12 @@ public class TemplateGecis extends Home implements Initializable {
     ObservableList<String> sirket = FXCollections.observableArrayList();
     ObservableList<String> kullanici = FXCollections.observableArrayList();
 
-
+    public static final LocalDate NOW_LOCAL_DATE (){
+        String date = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate localDate = LocalDate.parse(date , formatter);
+        return localDate;
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Statement stmt = null;
@@ -73,7 +82,16 @@ public class TemplateGecis extends Home implements Initializable {
         }
         projeAdi.setItems(FXCollections.observableArrayList("Proje 1", "Proje 2", "Proje 3"));
         projeAdi.getSelectionModel().selectFirst();
+        firmaComboBox.getSelectionModel().selectFirst();
+        ekipmanCombo.getSelectionModel().selectFirst();
+        tarih.setValue(NOW_LOCAL_DATE());
+        operetorCoboBox.getSelectionModel().selectFirst();
+        projeAdi.getSelectionModel().selectFirst();
+        degerlendirenCoboBox.getSelectionModel().selectFirst();
+        yuzeyDurumu.getSelectionModel().selectFirst();
+        onayCoboBox.getSelectionModel().selectFirst();
         yuzeyDurumu.setItems(FXCollections.observableArrayList("paslı", "tozlu", "tuzlu", "baharatlı"));
+        yuzeyDurumu.getSelectionModel().selectFirst();
 
     }
 

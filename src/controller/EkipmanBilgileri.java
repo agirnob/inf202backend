@@ -147,6 +147,7 @@ public class EkipmanBilgileri implements Initializable {
         d_MPTasiyiciOrtam.setCellValueFactory(new PropertyValueFactory<>("MPTasiyiciOrtam"));
         d_MuayeneTeknigi.setCellValueFactory(new PropertyValueFactory<>("muayeneBolgesi"));
         d_UVIsikSiddeti.setCellValueFactory(new PropertyValueFactory<>("uvIsikSiddeti"));
+
         ekipmanTable.setItems(data);
     }
     @FXML

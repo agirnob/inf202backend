@@ -4,9 +4,9 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="templateBir" prefHeight="418.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateBir">
+<AnchorPane fx:id="templateBir" prefHeight="418.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TemplateBir">
    <children>
-      <TabPane prefHeight="418.0" prefWidth="762.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="418.0" prefWidth="863.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Proje Bilgileri">
             <content>
@@ -125,35 +125,82 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutY="75.0" prefHeight="286.0" prefWidth="762.0">
+                        <TableView fx:id="muayeneSonuclariTableView" layoutY="77.0" onMouseClicked="#displayView" prefHeight="151.0" prefWidth="853.0">
                           <columns>
-                            <TableColumn minWidth="15.0" prefWidth="84.0" text="Sıra No." />
-                            <TableColumn minWidth="15.0" prefWidth="108.0" text="Kaynak/Parça No." />
-                              <TableColumn fx:id="kaynakParcaText" minWidth="2.0" prefWidth="60.0" text="Kontrol Uzun." />
-                              <TableColumn minWidth="15.0" prefWidth="84.0" text="Kaynak Yön" />
-                              <TableColumn minWidth="15.0" prefWidth="84.0" text="Kalınlık(mm)" />
-                              <TableColumn minWidth="15.0" prefWidth="84.0" text="Çap" />
-                              <TableColumn minWidth="15.0" prefWidth="84.0" text="Hata tipi" />
-                              <TableColumn minWidth="15.0" prefWidth="84.0" text="Hatanın yeri" />
-                              <TableColumn minWidth="15.0" prefWidth="84.0" text="Sonuç" />
+                            <TableColumn fx:id="kaynakColumn" minWidth="15.0" prefWidth="152.00000381469727" text="Kaynak/Parça No." />
+                              <TableColumn fx:id="uzunColumn" minWidth="2.0" prefWidth="124.0" text="Kontrol Uzun." />
+                              <TableColumn fx:id="yonColumn" minWidth="15.0" prefWidth="103.0" text="Kaynak Yön" />
+                              <TableColumn fx:id="kalinlikColumn" minWidth="15.0" prefWidth="114.0" text="Kalınlık(mm)" />
+                              <TableColumn fx:id="capColumn" minWidth="15.0" prefWidth="45.0" text="Çap" />
+                              <TableColumn fx:id="hataTipColumn" minWidth="15.0" prefWidth="112.0" text="Hata tipi" />
+                              <TableColumn fx:id="hataYerColumn" minWidth="15.0" prefWidth="132.0" text="Hatanın yeri" />
+                              <TableColumn fx:id="sonucColumn" minWidth="15.0" prefWidth="68.0" text="Sonuç" />
                           </columns>
                         </TableView>
-                        <TextField fx:id="siraNoText" layoutY="14.0" prefHeight="26.0" prefWidth="80.0" />
-                        <TextField layoutX="505.0" layoutY="14.0" prefHeight="26.0" prefWidth="73.0" />
-                        <TextField layoutX="592.0" layoutY="14.0" prefHeight="26.0" prefWidth="69.0" />
-                        <TextField layoutX="423.0" layoutY="14.0" prefHeight="26.0" prefWidth="67.0" />
-                        <TextField layoutX="338.0" layoutY="14.0" prefHeight="26.0" prefWidth="77.0" />
-                        <TextField layoutX="255.0" layoutY="14.0" prefHeight="26.0" prefWidth="74.0" />
-                        <TextField layoutX="169.0" layoutY="14.0" prefHeight="26.0" prefWidth="77.0" />
-                        <TextField fx:id="kaynak" layoutX="87.0" layoutY="14.0" prefHeight="26.0" prefWidth="75.0" />
-                        <Button layoutX="686.0" layoutY="45.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="62.0" text="Button" />
-                        <ChoiceBox layoutX="672.0" layoutY="14.0" prefHeight="26.0" prefWidth="76.0" />
+                        <TextField fx:id="hataTipiAddText" layoutX="544.0" layoutY="20.0" prefHeight="26.0" prefWidth="103.0" />
+                        <TextField fx:id="hataninYeriAddYeri" layoutX="655.0" layoutY="20.0" prefHeight="26.0" prefWidth="111.0" />
+                        <TextField fx:id="capAddText" layoutX="496.0" layoutY="20.0" prefHeight="26.0" prefWidth="44.0" />
+                        <TextField fx:id="kalinlikAddText" layoutX="393.0" layoutY="20.0" prefHeight="26.0" prefWidth="96.0" />
+                        <TextField fx:id="kaynakYonAddText" layoutX="288.0" layoutY="20.0" prefHeight="26.0" prefWidth="91.0" />
+                        <TextField fx:id="kontrolUzunAddText" layoutX="155.0" layoutY="20.0" prefHeight="26.0" prefWidth="116.0" />
+                        <TextField fx:id="kaynakAddText" layoutX="4.0" layoutY="20.0" prefHeight="26.0" prefWidth="144.0" />
+                        <Button layoutX="790.0" layoutY="49.0" mnemonicParsing="false" onAction="#addToTable" prefHeight="14.0" prefWidth="62.0" text="ekle" />
+                        <ComboBox fx:id="sonucAddText" layoutX="778.0" layoutY="20.0" prefHeight="26.0" prefWidth="80.0" />
+                        <Label layoutX="14.0" layoutY="4.0" text="Kaynak/Parça No." />
+                        <Label layoutX="156.0" layoutY="6.0" text="Kontrol Uzun." />
+                        <Label layoutX="290.0" layoutY="6.0" text="Kaynak Yön" />
+                        <Label layoutX="393.0" layoutY="6.0" text="Kalınlık(mm)" />
+                        <Label layoutX="499.0" layoutY="6.0" text="Çap" />
+                        <Label layoutX="568.0" layoutY="4.0" text="Hata tipi" />
+                        <Label layoutX="663.0" layoutY="6.0" text="Hatanın yeri" />
+                        <Label layoutX="799.0" layoutY="4.0" text="Sonuç" />
+                        <TextField fx:id="deg_HataTip" layoutX="545.0" layoutY="256.0" prefHeight="26.0" prefWidth="103.0" />
+                        <TextField fx:id="deg_HataYer" layoutX="656.0" layoutY="256.0" prefHeight="26.0" prefWidth="111.0" />
+                        <TextField fx:id="deg_Cap" layoutX="497.0" layoutY="256.0" prefHeight="26.0" prefWidth="44.0" />
+                        <TextField fx:id="deg_Kalin" layoutX="394.0" layoutY="256.0" prefHeight="26.0" prefWidth="96.0" />
+                        <TextField fx:id="deg_Yon" layoutX="289.0" layoutY="256.0" prefHeight="26.0" prefWidth="91.0" />
+                        <TextField fx:id="deg_Kontrol" layoutX="156.0" layoutY="256.0" prefHeight="26.0" prefWidth="116.0" />
+                        <TextField fx:id="deg_Kaynak" layoutX="5.0" layoutY="256.0" prefHeight="26.0" prefWidth="144.0" />
+                        <ChoiceBox fx:id="deg_Sonuc" layoutX="775.0" layoutY="256.0" prefHeight="26.0" prefWidth="80.0" />
+                        <Label layoutX="15.0" layoutY="240.0" text="Kaynak/Parça No." />
+                        <Label layoutX="157.0" layoutY="242.0" text="Kontrol Uzun." />
+                        <Label layoutX="291.0" layoutY="242.0" text="Kaynak Yön" />
+                        <Label layoutX="394.0" layoutY="242.0" text="Kalınlık(mm)" />
+                        <Label layoutX="500.0" layoutY="242.0" text="Çap" />
+                        <Label layoutX="569.0" layoutY="240.0" text="Hata tipi" />
+                        <Label layoutX="664.0" layoutY="242.0" text="Hatanın yeri" />
+                        <Label layoutX="800.0" layoutY="240.0" text="Sonuç" />
+                        <Separator layoutX="-4.0" layoutY="231.0" prefHeight="8.0" prefWidth="872.0" />
+                        <Button layoutX="770.0" layoutY="292.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="77.0" text="Kaldır" />
+                        <Button layoutX="689.0" layoutY="292.0" mnemonicParsing="false" onAction="#degistir" text="Değiştir" />
                      </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="Untitled Tab">
+            <Tab text="Personal Bilgileri">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="228.0" layoutY="34.0" prefHeight="43.0" prefWidth="97.0" text="Operator" />
+                        <Label alignment="CENTER" layoutX="382.0" layoutY="35.0" prefHeight="43.0" prefWidth="97.0" text="Değerlendiren" />
+                        <Label alignment="CENTER" layoutX="526.0" layoutY="35.0" prefHeight="43.0" prefWidth="97.0" text="Onay" />
+                        <Label alignment="CENTER" layoutX="648.0" layoutY="35.0" prefHeight="43.0" prefWidth="97.0" text="Müşteri" />
+                        <Label alignment="CENTER" layoutX="94.0" layoutY="84.0" prefHeight="43.0" prefWidth="97.0" text="Adı Soyadı" />
+                        <Label alignment="CENTER" layoutX="94.0" layoutY="143.0" prefHeight="43.0" prefWidth="97.0" text="Seviye" />
+                        <Label alignment="CENTER" layoutX="94.0" layoutY="212.0" prefHeight="43.0" prefWidth="97.0" text="Tarih" />
+                        <Label alignment="CENTER" layoutX="94.0" layoutY="274.0" prefHeight="43.0" prefWidth="97.0" text="İmza" />
+                        <Separator layoutX="84.0" layoutY="132.0" prefHeight="5.0" prefWidth="656.0" />
+                        <Separator layoutX="84.0" layoutY="199.0" prefHeight="3.0" prefWidth="657.0" />
+                        <Separator layoutX="83.0" layoutY="263.0" prefHeight="4.0" prefWidth="658.0" />
+                        <Separator layoutX="83.0" layoutY="76.0" prefHeight="8.0" prefWidth="663.0" />
+                        <Separator layoutX="198.0" layoutY="31.0" orientation="VERTICAL" prefHeight="297.0" prefWidth="6.0" />
+                        <Separator layoutX="200.0" layoutY="30.0" prefHeight="5.0" prefWidth="544.0" />
+                        <Separator layoutX="350.0" layoutY="30.0" orientation="VERTICAL" prefHeight="297.0" prefWidth="6.0" />
+                        <Separator layoutX="511.0" layoutY="31.0" orientation="VERTICAL" prefHeight="297.0" prefWidth="6.0" />
+                        <Separator layoutX="629.0" layoutY="30.0" orientation="VERTICAL" prefHeight="297.0" prefWidth="6.0" />
+                        <Separator layoutX="82.0" layoutY="325.0" prefHeight="3.0" prefWidth="661.0" />
+                        <Separator layoutX="742.0" layoutY="31.0" orientation="VERTICAL" prefHeight="297.0" prefWidth="6.0" />
+                        <Separator layoutX="80.0" layoutY="78.0" orientation="VERTICAL" prefHeight="249.0" prefWidth="8.0" />
+                     </children></AnchorPane>
               </content>
             </Tab>
         </tabs>
