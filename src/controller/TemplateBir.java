@@ -197,11 +197,13 @@ public class TemplateBir implements Initializable {
         muayeneSonuclaris.set(muayeneSonuclariTableView.getSelectionModel().getFocusedIndex(),new MuayeneSonuclari(deg_Kaynak.getText(),deg_Kontrol.getText(),deg_Yon.getText(),deg_Kalin.getText(),deg_Cap.getText(),deg_HataTip.getText(),deg_HataYer.getText(),deg_Sonuc.getValue().toString()));
     }
 
-    public void exportExcell(ActionEvent actionEvent) throws IOException {
+    public void exportExcell() throws IOException {
+        int i =0;
         ExcellExport ee = new ExcellExport();
-        ee.excelExpo();
+        ee.excelExpo(muayeneSonuclaris);
     }
 
-    public void exportPdf(ActionEvent actionEvent) {
+    public void exportPdf(ActionEvent actionEvent) throws IOException {
+        exportExcell();
     }
 }
