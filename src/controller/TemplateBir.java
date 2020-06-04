@@ -4,11 +4,9 @@ import agirnob.ExcellExport;
 import com.company.DBManager;
 import com.company.KisiEkleDegistir;
 import com.company.MuayeneSonuclari;
-import com.company.Sirket;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -64,9 +62,6 @@ public class TemplateBir implements Initializable {
     @FXML
     private TextField tarihTextField;
 
-    ObservableList<String> ekipman = FXCollections.observableArrayList();
-    ObservableList<String> sirket = FXCollections.observableArrayList();
-    ObservableList<String> kullanici = FXCollections.observableArrayList();
     ObservableList<MuayeneSonuclari> muayeneSonuclaris = FXCollections.observableArrayList();
 
 

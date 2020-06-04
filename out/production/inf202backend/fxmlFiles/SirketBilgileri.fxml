@@ -22,7 +22,7 @@
                         <Separator layoutX="597.0" layoutY="-34.0" orientation="VERTICAL" prefHeight="421.0" prefWidth="6.0" />
                         <ComboBox fx:id="ilComboBox" layoutX="44.0" layoutY="101.0" prefWidth="150.0" />
                         <ComboBox fx:id="ilceComboBox" layoutX="42.0" layoutY="158.0" prefWidth="150.0" />
-                        <Button layoutX="203.0" layoutY="101.0" mnemonicParsing="false" text="Seç" />
+                        <Button layoutX="203.0" layoutY="101.0" mnemonicParsing="false" onAction="#ilSec" text="Seç" />
                         <Button layoutX="203.0" layoutY="158.0" mnemonicParsing="false" text="Seç" />
                         <Button layoutX="269.0" layoutY="316.0" mnemonicParsing="false" onAction="#sirketEkle" text="Ekle" />
                      </children></AnchorPane>
