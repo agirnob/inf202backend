@@ -151,7 +151,7 @@ public class EkipmanBilgileri implements Initializable {
         ekipmanTable.setItems(data);
     }
     @FXML
-    private void displayView(MouseEvent mouseEvent) {
+    private void displayView() {
         Ekipman user = ekipmanTable.getSelectionModel().getSelectedItem();
         if (user == null) {
             deg_EkipmanIsmi.setText("Nichts gewahlt");

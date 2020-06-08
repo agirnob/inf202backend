@@ -36,7 +36,13 @@ import java.io.InputStream;
 @SuppressWarnings({"java:S106", "java:S4823", "java:S1192"})
 public final class ExcellExport {
 
-    public void excelExpo(ObservableList<MuayeneSonuclari>list) throws IOException {
+    public void excelExpo(String musteriAdiS, String muayeneProseduruS, String sayfaNoS, String projeAdiS, String raporNoS, String testYeriS, String resimNoS,
+                          String raporTarihiS, String muayeneStandartıS, String yuzeyDurumuS, String isEmriNoS, String degerlendirmeStandartiS, String muayeneAsamasiS, String teklifNoS,
+                          String kutupMesafesiS, String muayeneBolgesiS, String yuzeySicakligiS, String cihazAdiS, String akimTipiS, String muayeneBolgesiAlanS,
+                          String MPTasiyiciOrtamS,String luxMetreS, String miknatislamaTeknigiS, String muayeneOrtamiS, String yuzeyS, String UVIsikSiddetiS, String miknatisGiderimiS,
+                          String isikCihazTanimiS, String isikMesafesiS, String isilIslemS, String kaldirmaTestiS, String standartSapmalarS, String muayeneTarihleriS,
+                          String aciklamalarEklerS, String operatorIsimS, String operatorSeviyeS, String operatorTarihS, String degerlendirenIsimS, String degerlendirenSeviyeS,
+                          String degerlendirenTarihS, String onayIsimS, String onaySeviyeS, String onayTarihS, ObservableList<MuayeneSonuclari> list) throws IOException {
         InputStream inputStream = this.getClass().getResourceAsStream("FR_02_MT.xlsx");
         XSSFWorkbook workbook = (XSSFWorkbook) WorkbookFactory.create(inputStream);
         XSSFSheet sheet = workbook.getSheetAt(0);
@@ -44,24 +50,36 @@ public final class ExcellExport {
         Cell musteriAdi = row2.getCell(3);//column
         Cell muayeneProseduru = row2.getCell(19);//column
         Cell sayfaNo = row2.getCell(26);//column
+        musteriAdi.setCellValue(musteriAdiS);
+        muayeneProseduru.setCellValue(muayeneProseduruS);
+        sayfaNo.setCellValue(sayfaNoS);
+
+
 
         Row row3 = sheet.getRow(3);//row
         Cell projeAdi = row3.getCell(3);//column
         Cell muayeneKapsamı = row3.getCell(19);//column
         Cell raporNo = row3.getCell(26);//column
+        projeAdi.setCellValue(projeAdiS);
+        muayeneKapsamı.setCellValue(muayeneAsamasiS);
+        raporNo.setCellValue(raporNoS);
 
         Row row4 = sheet.getRow(4);//row
         Cell testYeri = row4.getCell(3);//column
         Cell resimNo = row4.getCell(19);//column
         Cell raporTarihi = row4.getCell(26);//column
+        testYeri.setCellValue(testYeriS);
+        resimNo.setCellValue(resimNoS);
+        raporTarihi.setCellValue(raporTarihiS);
 
         Row row5 = sheet.getRow(5);//row
         Cell muayeneStandartı = row5.getCell(3);//column
         Cell yuzeyDurumu = row5.getCell(19);//column
         Cell isEmriNo = row5.getCell(26);//column
 
-        Row row6 = sheet.getRow(6);//row
 
+
+        Row row6 = sheet.getRow(6);//row
         Cell degerlendirmeStandarti = row6.getCell(3);//column
         Cell muayeneAsamasi = row6.getCell(19);//column
         Cell teklifNo = row6.getCell(26);//column
@@ -107,8 +125,8 @@ public final class ExcellExport {
         Row row21 = sheet.getRow(21);//row
         Cell aciklamalarEkler = row21.getCell(7);
         int i = 1;
-        while (!list.isEmpty()&&i<=14) {
-            Row rowTable = sheet.getRow(i+23);//row
+        while (!list.isEmpty() && i <= 14) {
+            Row rowTable = sheet.getRow(i + 23);//row
             Cell sira = rowTable.getCell(0);
             Cell kaynakParca = rowTable.getCell(1);
             Cell kontrolUzun = rowTable.getCell(8);

@@ -52,6 +52,28 @@ public class TemplateBir implements Initializable {
     public Label onayAd;
     public Label degerlendirenSeviye;
     public Label onaySeviye;
+    public TextField muayeneProseduru;
+    public TextField sayfaNo;
+    public TextField raporNo;
+    public TextField resimNo;
+    public TextField muayeneStandarti;
+    public TextField yuzeyDurumu;
+    public TextField degerlendirmeStandarti;
+    public ComboBox muayeneAsamasi;
+    public TextField yuzeySicakligi;
+    public TextField muayeneBolgesiAlanSiddeti;
+    public TextField luxMetre;
+    public TextField muayeneOrtami;
+    public TextField yuzey1;
+    public TextField yuzey2;
+    public TextField miknatisGiderimi;
+    public TextField isikCİhaziTanimi;
+    public TextField isilIslem;
+    public TextField kaldirmaTesti1;
+    public TextField kaldirmaTesti2;
+    public TextField standartSapma;
+    public TextField muayeneTarihi;
+    public TextArea aciklamalarEkler;
     @FXML
     private TableColumn<MuayeneSonuclari, String> kaynakColumn, uzunColumn, yonColumn, kalinlikColumn, capColumn, hataTipColumn, hataYerColumn, sonucColumn;
 
@@ -65,7 +87,6 @@ public class TemplateBir implements Initializable {
     ObservableList<MuayeneSonuclari> muayeneSonuclaris = FXCollections.observableArrayList();
 
 
-
     public void setField(String Tarih, String ekipman, String onay, String degerlendiren, String operator, String firma, String proje, String yuzey) {
         tarihTextField.setText(Tarih);
         firmaAdiTextField.setText(firma);
@@ -76,7 +97,7 @@ public class TemplateBir implements Initializable {
         Statement stmtKullanıcı2 = null;
         Statement stmtKullanıcı3 = null;
         Statement stmtFirma = null;
-
+        muayeneTarihi.setText(Tarih);
         akimTipiComboBox.setItems(FXCollections.observableArrayList("AC", "DC"));
         try {
             stmtEkipman = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -109,17 +130,17 @@ public class TemplateBir implements Initializable {
                 }
             }
             ResultSet rsK = stmtKullanıcı.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + operator + "'");
-            while (rsK.next()){
+            while (rsK.next()) {
                 operatorSeviye.setText(rsK.getString("seviye"));
-                operatorAd.setText(rsK.getString("isim") + " " +rsK.getString("soyisim"));
+                operatorAd.setText(rsK.getString("isim") + " " + rsK.getString("soyisim"));
             }
             ResultSet rsK1 = stmtKullanıcı2.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + degerlendiren + "'");
-            while (rsK1.next()){
+            while (rsK1.next()) {
                 degerlendirenSeviye.setText(rsK1.getString("seviye"));
-                degerlendirenAd.setText(rsK1.getString("isim") +" " + rsK1.getString("soyisim"));
+                degerlendirenAd.setText(rsK1.getString("isim") + " " + rsK1.getString("soyisim"));
             }
             ResultSet rsK2 = stmtKullanıcı3.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + onay + "'");
-            while (rsK2.next()){
+            while (rsK2.next()) {
                 onaySeviye.setText(rsK2.getString("seviye"));
                 onayAd.setText(rsK2.getString("isim") + " " + rsK2.getString("soyisim"));
             }
@@ -134,18 +155,14 @@ public class TemplateBir implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         operatorAd.setText("deneme");
+        muayeneAsamasi.setItems(FXCollections.observableArrayList("untreated","treated"));
+        muayeneAsamasi.getSelectionModel().selectFirst();
         sonucAddText.setItems(FXCollections.observableArrayList("OK", "RED"));
         deg_Sonuc.setItems(FXCollections.observableArrayList("OK", "RED"));
 
         Statement stmt = null;
         Statement stmt2 = null;
         Statement stmt3 = null;
-
-
-
-
-
-
 
 
     }
@@ -189,13 +206,32 @@ public class TemplateBir implements Initializable {
     }
 
     public void degistir(ActionEvent actionEvent) {
-        muayeneSonuclaris.set(muayeneSonuclariTableView.getSelectionModel().getFocusedIndex(),new MuayeneSonuclari(deg_Kaynak.getText(),deg_Kontrol.getText(),deg_Yon.getText(),deg_Kalin.getText(),deg_Cap.getText(),deg_HataTip.getText(),deg_HataYer.getText(),deg_Sonuc.getValue().toString()));
+        muayeneSonuclaris.set(muayeneSonuclariTableView.getSelectionModel().getFocusedIndex(), new MuayeneSonuclari(deg_Kaynak.getText(), deg_Kontrol.getText(), deg_Yon.getText(), deg_Kalin.getText(), deg_Cap.getText(), deg_HataTip.getText(), deg_HataYer.getText(), deg_Sonuc.getValue().toString()));
     }
 
     public void exportExcell() throws IOException {
-        int i =0;
+        int i = 0;
         ExcellExport ee = new ExcellExport();
-        ee.excelExpo(muayeneSonuclaris);
+        ee.excelExpo(firmaAdiTextField.getText(), muayeneProseduru.getText(), sayfaNo.getText(), projeAdiTextField.getText(), raporNo.getText(), testYeriTextField.getText(),
+                resimNo.getText(),
+                tarihTextField.getText(),
+                muayeneStandarti.getText(),
+                yuzeyDurumu.getText(),
+                isEmriNoTextField.getText(),
+                degerlendirmeStandarti.getText(),
+                muayeneAsamasi.getValue().toString() + "%",
+                teklifNoTextField.getText(), kutupMesafesiTextField.getText(),
+                muayenBolgesiTextField.getText(), yuzeySicakligi.getText(),
+                ekipmanTextField.getText(),
+                akimTipiComboBox.getValue().toString(),
+                muayeneBolgesiAlanSiddeti.getText(),
+                MPTasiyiciOrtamTexyField.getText(),
+                luxMetre.getText(),
+                miknatislamaTeknigiTextField.getText(),
+                muayeneOrtami.getText(), yuzey1.getText() + "/" + yuzey2.getText(),
+                UVIsikSiddetiTextField.getText(), miknatisGiderimi.getText(), isikCİhaziTanimi.getText(), isikMesafesiTextField.getText(), isilIslem.getText(), kaldirmaTesti1.getText() + "/" + kaldirmaTesti2.getText(),
+                standartSapma.getText(), muayeneTarihi.getText(), aciklamalarEkler.getText(), operatorAd.getText(), operatorSeviye.getText(), tarih.getText(), degerlendirenAd.getText(),
+                degerlendirenSeviye.getText(), tarihD.getText(), onayAd.getText(), onaySeviye.getText(), tarihON.getText(), muayeneSonuclaris);
     }
 
     public void exportPdf(ActionEvent actionEvent) throws IOException {
