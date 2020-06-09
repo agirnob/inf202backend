@@ -12,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,15 +42,6 @@ public class TemplateBir implements Initializable {
     public TextField deg_Kontrol;
     public TextField deg_Kaynak;
     public ChoiceBox deg_Sonuc;
-    public Label operatorAd;
-    public Label operatorSeviye;
-    public Label tarih;
-    public Label tarihD;
-    public Label tarihON;
-    public Label degerlendirenAd;
-    public Label onayAd;
-    public Label degerlendirenSeviye;
-    public Label onaySeviye;
     public TextField muayeneProseduru;
     public TextField sayfaNo;
     public TextField raporNo;
@@ -74,13 +64,21 @@ public class TemplateBir implements Initializable {
     public TextField standartSapma;
     public TextField muayeneTarihi;
     public TextArea aciklamalarEkler;
+    public ComboBox muayeneKapsami;
+    public TextField operatorAd;
+    public TextField operatorSeviye;
+    public TextField tarih;
+    public TextField degerlendirenAd;
+    public TextField degerlendirenSeviye;
+    public TextField tarihD;
+    public TextField onayAd;
+    public TextField onaySeviye;
+    public TextField tarihON;
     @FXML
     private TableColumn<MuayeneSonuclari, String> kaynakColumn, uzunColumn, yonColumn, kalinlikColumn, capColumn, hataTipColumn, hataYerColumn, sonucColumn;
 
     @FXML
     private TextField firmaAdiTextField, teklifNoTextField, isEmriNoTextField, testYeriTextField;
-    @FXML
-    private AnchorPane templateBir;
     @FXML
     private TextField tarihTextField;
 
@@ -159,7 +157,8 @@ public class TemplateBir implements Initializable {
         muayeneAsamasi.getSelectionModel().selectFirst();
         sonucAddText.setItems(FXCollections.observableArrayList("OK", "RED"));
         deg_Sonuc.setItems(FXCollections.observableArrayList("OK", "RED"));
-
+        muayeneKapsami.setItems(FXCollections.observableArrayList("10","20","30","40","50","60","70","80","90","100"));
+        muayeneKapsami.getSelectionModel().selectFirst();
         Statement stmt = null;
         Statement stmt2 = null;
         Statement stmt3 = null;
@@ -212,14 +211,17 @@ public class TemplateBir implements Initializable {
     public void exportExcell() throws IOException {
         int i = 0;
         ExcellExport ee = new ExcellExport();
-        ee.excelExpo(firmaAdiTextField.getText(), muayeneProseduru.getText(), sayfaNo.getText(), projeAdiTextField.getText(), raporNo.getText(), testYeriTextField.getText(),
+        ee.excelExpo(firmaAdiTextField.getText(),
+                muayeneProseduru.getText(), sayfaNo.getText(),
+                projeAdiTextField.getText(), raporNo.getText(),
+                testYeriTextField.getText(),
                 resimNo.getText(),
                 tarihTextField.getText(),
                 muayeneStandarti.getText(),
                 yuzeyDurumu.getText(),
                 isEmriNoTextField.getText(),
                 degerlendirmeStandarti.getText(),
-                muayeneAsamasi.getValue().toString() + "%",
+                muayeneAsamasi.getValue().toString() ,
                 teklifNoTextField.getText(), kutupMesafesiTextField.getText(),
                 muayenBolgesiTextField.getText(), yuzeySicakligi.getText(),
                 ekipmanTextField.getText(),
@@ -228,10 +230,29 @@ public class TemplateBir implements Initializable {
                 MPTasiyiciOrtamTexyField.getText(),
                 luxMetre.getText(),
                 miknatislamaTeknigiTextField.getText(),
-                muayeneOrtami.getText(), yuzey1.getText() + "/" + yuzey2.getText(),
-                UVIsikSiddetiTextField.getText(), miknatisGiderimi.getText(), isikCİhaziTanimi.getText(), isikMesafesiTextField.getText(), isilIslem.getText(), kaldirmaTesti1.getText() + "/" + kaldirmaTesti2.getText(),
-                standartSapma.getText(), muayeneTarihi.getText(), aciklamalarEkler.getText(), operatorAd.getText(), operatorSeviye.getText(), tarih.getText(), degerlendirenAd.getText(),
-                degerlendirenSeviye.getText(), tarihD.getText(), onayAd.getText(), onaySeviye.getText(), tarihON.getText(), muayeneSonuclaris);
+                muayeneOrtami.getText(),
+                yuzey1.getText() + "/" + yuzey2.getText(),
+                UVIsikSiddetiTextField.getText(),
+                miknatisGiderimi.getText(),
+                isikCİhaziTanimi.getText(),
+                isikMesafesiTextField.getText(),
+                isilIslem.getText(),
+                kaldirmaTesti1.getText() + "/" + kaldirmaTesti2.getText(),
+                standartSapma.getText(),
+                muayeneTarihi.getText(),
+                aciklamalarEkler.getText(),
+
+                operatorAd.getText(),
+                operatorSeviye.getText(),
+                tarih.getText(),
+                degerlendirenAd.getText(),
+                degerlendirenSeviye.getText(),
+                tarihD.getText(),
+                onayAd.getText(),
+                onaySeviye.getText(),
+                tarihON.getText(),
+                muayeneSonuclaris,
+                muayeneKapsami.getValue().toString()+"%");
     }
 
     public void exportPdf(ActionEvent actionEvent) throws IOException {

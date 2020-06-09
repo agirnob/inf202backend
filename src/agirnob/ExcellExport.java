@@ -19,11 +19,8 @@ package agirnob;
 
 import com.company.MuayeneSonuclari;
 import javafx.collections.ObservableList;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -42,7 +39,7 @@ public final class ExcellExport {
                           String MPTasiyiciOrtamS,String luxMetreS, String miknatislamaTeknigiS, String muayeneOrtamiS, String yuzeyS, String UVIsikSiddetiS, String miknatisGiderimiS,
                           String isikCihazTanimiS, String isikMesafesiS, String isilIslemS, String kaldirmaTestiS, String standartSapmalarS, String muayeneTarihleriS,
                           String aciklamalarEklerS, String operatorIsimS, String operatorSeviyeS, String operatorTarihS, String degerlendirenIsimS, String degerlendirenSeviyeS,
-                          String degerlendirenTarihS, String onayIsimS, String onaySeviyeS, String onayTarihS, ObservableList<MuayeneSonuclari> list) throws IOException {
+                          String degerlendirenTarihS, String onayIsimS, String onaySeviyeS, String onayTarihS, ObservableList<MuayeneSonuclari> list,String muayeneKapsamiS) throws IOException {
         InputStream inputStream = this.getClass().getResourceAsStream("FR_02_MT.xlsx");
         XSSFWorkbook workbook = (XSSFWorkbook) WorkbookFactory.create(inputStream);
         XSSFSheet sheet = workbook.getSheetAt(0);
@@ -61,7 +58,7 @@ public final class ExcellExport {
         Cell muayeneKapsamı = row3.getCell(19);//column
         Cell raporNo = row3.getCell(26);//column
         projeAdi.setCellValue(projeAdiS);
-        muayeneKapsamı.setCellValue(muayeneAsamasiS);
+        muayeneKapsamı.setCellValue(muayeneKapsamiS);
         raporNo.setCellValue(raporNoS);
 
         Row row4 = sheet.getRow(4);//row
@@ -76,54 +73,77 @@ public final class ExcellExport {
         Cell muayeneStandartı = row5.getCell(3);//column
         Cell yuzeyDurumu = row5.getCell(19);//column
         Cell isEmriNo = row5.getCell(26);//column
-
+        muayeneStandartı.setCellValue(muayeneStandartıS);
+        yuzeyDurumu.setCellValue(yuzeyDurumuS);
+        isEmriNo.setCellValue(isEmriNoS);
 
 
         Row row6 = sheet.getRow(6);//row
         Cell degerlendirmeStandarti = row6.getCell(3);//column
         Cell muayeneAsamasi = row6.getCell(19);//column
         Cell teklifNo = row6.getCell(26);//column
+        degerlendirmeStandarti.setCellValue(degerlendirenSeviyeS);
+        muayeneAsamasi.setCellValue(muayeneAsamasiS);
+        teklifNo.setCellValue(teklifNoS);
 
         Row row8 = sheet.getRow(8);//row
-
         Cell kutupMesafesi = row8.getCell(4);
         Cell muayeneBolgesi = row8.getCell(16);
         Cell yuzeySicakligi = row8.getCell(25);
+        kutupMesafesi.setCellValue(kutupMesafesiS);
+        muayeneBolgesi.setCellValue(muayeneBolgesiS);
+        yuzeySicakligi.setCellValue(yuzeySicakligiS);
 
         Row row9 = sheet.getRow(9);//row
         Cell cihazAdi = row9.getCell(4);
         Cell akimTipi = row9.getCell(16);
         Cell muayeneBolgesiAlan = row9.getCell(25);
-
+        cihazAdi.setCellValue(cihazAdiS);
+        akimTipi.setCellValue(akimTipiS);
+        muayeneBolgesiAlan.setCellValue(muayeneAsamasiS);
 
         Row row10 = sheet.getRow(10);//row
         Cell MPTasiyiciOrtam = row10.getCell(4);
         Cell luxMetre = row10.getCell(16);
+        MPTasiyiciOrtam.setCellValue(MPTasiyiciOrtamS);
+        luxMetre.setCellValue(luxMetreS);
 
         Row row11 = sheet.getRow(11);//row
         Cell miknatislamaTeknigi = row11.getCell(4);
         Cell muayeneOrtami = row11.getCell(16);
         Cell yuzey = row11.getCell(25);
+        miknatislamaTeknigi.setCellValue(miknatislamaTeknigiS);
+        muayeneOrtami.setCellValue(muayeneOrtamiS);
+        yuzey.setCellValue(yuzeyS);
 
         Row row12 = sheet.getRow(12);//row
-        Cell UVIsikSiddeti = row11.getCell(4);
-        Cell miknatisGiderimi = row11.getCell(16);
-        Cell isikCihazTanimi = row11.getCell(25);
+        Cell UVIsikSiddeti = row12.getCell(4);
+        Cell miknatisGiderimi = row12.getCell(16);
+        Cell isikCihazTanimi = row12.getCell(25);
+        UVIsikSiddeti.setCellValue(UVIsikSiddetiS);
+        miknatisGiderimi.setCellValue(miknatisGiderimiS);
+        isikCihazTanimi.setCellValue(isikCihazTanimiS);
+
 
         Row row13 = sheet.getRow(13);//row
         Cell isikMesafesi = row13.getCell(4);
         Cell isilIslem = row13.getCell(16);
         Cell kaldirmaTesti = row13.getCell(25);
-
+        isikMesafesi.setCellValue(isikMesafesiS);
+        isilIslem.setCellValue(isilIslemS);
+        kaldirmaTesti.setCellValue(kaldirmaTestiS);
 
         Row row19 = sheet.getRow(19);//row
         Cell standartSapmalar = row19.getCell(7);
+        standartSapmalar.setCellValue(standartSapmalarS);
 
         Row row20 = sheet.getRow(20);//row
         Cell muayeneTarihleri = row20.getCell(7);
+        muayeneTarihleri.setCellValue(muayeneTarihleriS);
 
         Row row21 = sheet.getRow(21);//row
         Cell aciklamalarEkler = row21.getCell(7);
+        aciklamalarEkler.setCellValue(aciklamalarEklerS);
         int i = 1;
         while (!list.isEmpty() && i <= 14) {
             Row rowTable = sheet.getRow(i + 23);//row
@@ -150,20 +170,30 @@ public final class ExcellExport {
         }
 
         Row row39 = sheet.getRow(39);//row
-        Cell operatorIsim = row39.getCell(7);
-        Cell degerlendirenIsim = row39.getCell(7);
-        Cell onayIsim = row39.getCell(7);
+        Cell operatorIsim = row39.getCell(5);
+        Cell degerlendirenIsim = row39.getCell(15);
+        Cell onayIsim = row39.getCell(20);
+
+        operatorIsim.setCellValue(operatorIsimS);
+        degerlendirenIsim.setCellValue(degerlendirenIsimS);
+        onayIsim.setCellValue(onayIsimS);
 
         Row row40 = sheet.getRow(40);//row
-        Cell operatorSeviye = row40.getCell(7);
-        Cell degerlendirenSeviye = row40.getCell(7);
-        Cell onaySeviye = row40.getCell(7);
+        Cell operatorSeviye = row40.getCell(5);
+        Cell degerlendirenSeviye = row40.getCell(15);
+        Cell onaySeviye = row40.getCell(20);
+        operatorSeviye.setCellValue(onaySeviyeS);
+        degerlendirenSeviye.setCellValue(degerlendirenSeviyeS);
+        onaySeviye.setCellValue(onaySeviyeS);
+
 
         Row row41 = sheet.getRow(41);//row
-        Cell operatorTarih = row40.getCell(7);
-        Cell degerlendirenTarih = row40.getCell(7);
-        Cell onayTarih = row40.getCell(7);
-
+        Cell operatorTarih = row41.getCell(5);
+        Cell degerlendirenTarih = row41.getCell(15);
+        Cell onayTarih = row41.getCell(20);
+        operatorTarih.setCellValue(operatorTarihS);
+        degerlendirenTarih.setCellValue(degerlendirenTarihS);
+        onayTarih.setCellValue(onayTarihS);
 
         String file = System.getProperty("user.home");
         if (workbook instanceof XSSFWorkbook) {
