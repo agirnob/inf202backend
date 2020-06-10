@@ -1,57 +1,32 @@
 package agirnob;
 
-import java.io.FileInputStream;
-import java.io.*;
-import org.apache.poi.ss.usermodel.*;
-import java.util.Iterator;
-import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.*;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.aspose.cells.SaveFormat;
+import com.aspose.cells.Workbook;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Excel2pdf {
-    public void deneme() throws Exception{
+    public static void deneme() throws Exception {
+        try {
 
-        FileInputStream input_document = new FileInputStream(new File("timesheet.xlsx"));
-        // Read workbook into HSSFWorkbook
-        XSSFWorkbook my_xls_workbook = new XSSFWorkbook(input_document);
-        // Read worksheet into HSSFSheet
-        XSSFSheet my_worksheet = my_xls_workbook.getSheetAt(0);
-        // To iterate over the rows
-        Iterator<Row> rowIterator = my_worksheet.iterator();
-        //We will create output PDF document objects at this point
-        Document iText_xls_2_pdf = new Document();
-        PdfWriter.getInstance(iText_xls_2_pdf, new FileOutputStream("Excel2PDF_Output.pdf"));
-        iText_xls_2_pdf.open();
-        //we have two columns in the Excel sheet, so we create a PDF table with two columns
-        //Note: There are ways to make this dynamic in nature, if you want to.
-        PdfPTable my_table = new PdfPTable(2);
-        //We will use the object below to dynamically add new data to the table
-        PdfPCell table_cell;
-        //Loop through rows.
-        while(rowIterator.hasNext()) {
-            Row row = rowIterator.next();
-            Iterator<Cell> cellIterator = row.cellIterator();
-            while(cellIterator.hasNext()) {
-                Cell cell = cellIterator.next(); //Fetch CELL
-                switch(cell.getCellType()) { //Identify CELL type
-                    //you need to add more code here based on
-                    //your requirement / transformations
-                    case STRING:
-                        //Push the data from Excel to PDF Cell
-                        table_cell=new PdfPCell(new Phrase(cell.getStringCellValue()));
-                        //feel free to move the code below to suit to your needs
-                        my_table.addCell(table_cell);
-                        break;
-                }
-                //next line
-            }
 
+        String file = System.getProperty("user.home");
+        file += "/x.xlsx";
+        Workbook workbook = new Workbook(file);
+
+
+        String file2= System.getProperty("user.home");
+        file2+="/pdfCıktı.pdf";
+        workbook.save(file2, SaveFormat.PDF);
+
+        // Print message
+        System.out.println("Excel to PDF conversion performed successfully.");}
+        catch (Exception e){
+            System.out.println(e);
         }
-        //Finally add the table to PDF document
-        iText_xls_2_pdf.add(my_table);
-        iText_xls_2_pdf.close();
-        //we created our pdf file..
-        input_document.close(); //close xls
+
+
     }
 }

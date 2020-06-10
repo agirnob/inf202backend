@@ -33,13 +33,7 @@ import java.io.InputStream;
 @SuppressWarnings({"java:S106", "java:S4823", "java:S1192"})
 public final class ExcellExport {
 
-    public void excelExpo(String musteriAdiS, String muayeneProseduruS, String sayfaNoS, String projeAdiS, String raporNoS, String testYeriS, String resimNoS,
-                          String raporTarihiS, String muayeneStandartıS, String yuzeyDurumuS, String isEmriNoS, String degerlendirmeStandartiS, String muayeneAsamasiS, String teklifNoS,
-                          String kutupMesafesiS, String muayeneBolgesiS, String yuzeySicakligiS, String cihazAdiS, String akimTipiS, String muayeneBolgesiAlanS,
-                          String MPTasiyiciOrtamS,String luxMetreS, String miknatislamaTeknigiS, String muayeneOrtamiS, String yuzeyS, String UVIsikSiddetiS, String miknatisGiderimiS,
-                          String isikCihazTanimiS, String isikMesafesiS, String isilIslemS, String kaldirmaTestiS, String standartSapmalarS, String muayeneTarihleriS,
-                          String aciklamalarEklerS, String operatorIsimS, String operatorSeviyeS, String operatorTarihS, String degerlendirenIsimS, String degerlendirenSeviyeS,
-                          String degerlendirenTarihS, String onayIsimS, String onaySeviyeS, String onayTarihS, ObservableList<MuayeneSonuclari> list,String muayeneKapsamiS) throws IOException {
+    public void excelExpo(String musteriAdiS, String muayeneProseduruS, String sayfaNoS, String projeAdiS, String raporNoS, String testYeriS, String resimNoS, String raporTarihiS, String muayeneStandartıS, String yuzeyDurumuS, String isEmriNoS, String degerlendirmeStandartiS, String muayeneAsamasiS, String teklifNoS, String kutupMesafesiS, String muayeneBolgesiS, String yuzeySicakligiS, String cihazAdiS, String akimTipiS, String muayeneBolgesiAlanS, String MPTasiyiciOrtamS, String luxMetreS, String miknatislamaTeknigiS, String muayeneOrtamiS, String yuzeyS, String UVIsikSiddetiS, String miknatisGiderimiS, String isikCihazTanimiS, String isikMesafesiS, String isilIslemS, String kaldirmaTestiS, String standartSapmalarS, String muayeneTarihleriS, String aciklamalarEklerS, String operatorIsimS, String operatorSeviyeS, String operatorTarihS, String degerlendirenIsimS, String degerlendirenSeviyeS, String degerlendirenTarihS, String onayIsimS, String onaySeviyeS, String onayTarihS, ObservableList<MuayeneSonuclari> list, String muayeneKapsamiS) throws IOException {
         InputStream inputStream = this.getClass().getResourceAsStream("FR_02_MT.xlsx");
         XSSFWorkbook workbook = (XSSFWorkbook) WorkbookFactory.create(inputStream);
         XSSFSheet sheet = workbook.getSheetAt(0);
@@ -50,7 +44,6 @@ public final class ExcellExport {
         musteriAdi.setCellValue(musteriAdiS);
         muayeneProseduru.setCellValue(muayeneProseduruS);
         sayfaNo.setCellValue(sayfaNoS);
-
 
 
         Row row3 = sheet.getRow(3);//row
@@ -196,13 +189,15 @@ public final class ExcellExport {
         onayTarih.setCellValue(onayTarihS);
 
         String file = System.getProperty("user.home");
-        if (workbook instanceof XSSFWorkbook) {
-            file += "/x.xlsx";
-        }
+        file += "/x.xlsx";
         System.out.println(file);
         FileOutputStream out = new FileOutputStream(file);
         workbook.write(out);
         out.close();
+        String file2 = "x.xls";
+        FileOutputStream out2 = new FileOutputStream(file2);
+        workbook.write(out2);
+        out2.close();
     }
 
 

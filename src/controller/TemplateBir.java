@@ -1,5 +1,6 @@
 package controller;
 
+import agirnob.Excel2pdf;
 import agirnob.ExcellExport;
 import com.company.DBManager;
 import com.company.KisiEkleDegistir;
@@ -255,7 +256,8 @@ public class TemplateBir implements Initializable {
                 muayeneKapsami.getValue().toString()+"%");
     }
 
-    public void exportPdf(ActionEvent actionEvent) throws IOException {
+    public void exportPdf(ActionEvent actionEvent) throws Exception {
         exportExcell();
+        Excel2pdf.deneme();
     }
 }
