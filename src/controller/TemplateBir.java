@@ -92,17 +92,18 @@ public class TemplateBir implements Initializable {
         ekipmanTextField.setText(ekipman);
         projeAdiTextField.setText(proje);
         Statement stmtEkipman = null;
-        Statement stmtKullanıcı = null;
-        Statement stmtKullanıcı2 = null;
-        Statement stmtKullanıcı3 = null;
+        Statement stmtKullanici = null;
+        Statement stmtKullanici2 = null;
+        Statement stmtKullanici3 = null;
         Statement stmtFirma = null;
         muayeneTarihi.setText(Tarih);
         akimTipiComboBox.setItems(FXCollections.observableArrayList("AC", "DC"));
+        yuzeyDurumu.setText(yuzey);
         try {
             stmtEkipman = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            stmtKullanıcı = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            stmtKullanıcı2 = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            stmtKullanıcı3 = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            stmtKullanici = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            stmtKullanici2 = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            stmtKullanici3 = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             stmtFirma = DBManager.getConn().createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
             ResultSet rsF = stmtFirma.executeQuery("SELECT * FROM " + SirketBilgileri.tableName + " WHERE MusteriIsmi = " + "'" + firma + "'");
@@ -128,17 +129,17 @@ public class TemplateBir implements Initializable {
                     akimTipiComboBox.getSelectionModel().selectLast();
                 }
             }
-            ResultSet rsK = stmtKullanıcı.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + operator + "'");
+            ResultSet rsK = stmtKullanici.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + operator + "'");
             while (rsK.next()) {
                 operatorSeviye.setText(rsK.getString("seviye"));
                 operatorAd.setText(rsK.getString("isim") + " " + rsK.getString("soyisim"));
             }
-            ResultSet rsK1 = stmtKullanıcı2.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + degerlendiren + "'");
+            ResultSet rsK1 = stmtKullanici2.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + degerlendiren + "'");
             while (rsK1.next()) {
                 degerlendirenSeviye.setText(rsK1.getString("seviye"));
                 degerlendirenAd.setText(rsK1.getString("isim") + " " + rsK1.getString("soyisim"));
             }
-            ResultSet rsK2 = stmtKullanıcı3.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + onay + "'");
+            ResultSet rsK2 = stmtKullanici3.executeQuery("SELECT * FROM " + KisiEkleDegistir.tableName + " WHERE kullaniciAdi = " + "'" + onay + "'");
             while (rsK2.next()) {
                 onaySeviye.setText(rsK2.getString("seviye"));
                 onayAd.setText(rsK2.getString("isim") + " " + rsK2.getString("soyisim"));
