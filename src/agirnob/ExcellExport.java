@@ -48,10 +48,10 @@ public final class ExcellExport {
 
         Row row3 = sheet.getRow(3);//row
         Cell projeAdi = row3.getCell(3);//column
-        Cell muayeneKapsamı = row3.getCell(19);//column
+        Cell muayeneKapsami = row3.getCell(19);//column
         Cell raporNo = row3.getCell(26);//column
         projeAdi.setCellValue(projeAdiS);
-        muayeneKapsamı.setCellValue(muayeneKapsamiS);
+        muayeneKapsami.setCellValue(muayeneKapsamiS);
         raporNo.setCellValue(raporNoS);
 
         Row row4 = sheet.getRow(4);//row
@@ -63,10 +63,10 @@ public final class ExcellExport {
         raporTarihi.setCellValue(raporTarihiS);
 
         Row row5 = sheet.getRow(5);//row
-        Cell muayeneStandartı = row5.getCell(3);//column
+        Cell muayeneStandarti = row5.getCell(3);//column
         Cell yuzeyDurumu = row5.getCell(19);//column
         Cell isEmriNo = row5.getCell(26);//column
-        muayeneStandartı.setCellValue(muayeneStandartiS);
+        muayeneStandarti.setCellValue(muayeneStandartiS);
         yuzeyDurumu.setCellValue(yuzeyDurumuS);
         isEmriNo.setCellValue(isEmriNoS);
 
@@ -93,7 +93,7 @@ public final class ExcellExport {
         Cell muayeneBolgesiAlan = row9.getCell(25);
         cihazAdi.setCellValue(cihazAdiS);
         akimTipi.setCellValue(akimTipiS);
-        muayeneBolgesiAlan.setCellValue(muayeneAsamasiS);
+        muayeneBolgesiAlan.setCellValue(muayeneBolgesiAlanS);
 
         Row row10 = sheet.getRow(10);//row
         Cell MPTasiyiciOrtam = row10.getCell(4);

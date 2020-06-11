@@ -10,14 +10,14 @@
         <Tab text="Kişi ekle">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="884.0">
                 <VBox alignment="TOP_RIGHT" layoutX="102.0" layoutY="14.0" prefHeight="310.0" prefWidth="299.0">
-                    <TextField fx:id="soyisimDB" promptText="soyisim">
-                        <VBox.margin>
-                            <Insets bottom="15.0" top="30.0" />
-                        </VBox.margin>
-                    </TextField>
                     <TextField fx:id="isimDB" promptText="isim">
                         <VBox.margin>
                             <Insets bottom="15.0" top="15.0" />
+                        </VBox.margin>
+                    </TextField>
+                    <TextField fx:id="soyisimDB" promptText="soyisim">
+                        <VBox.margin>
+                            <Insets bottom="15.0" top="30.0" />
                         </VBox.margin>
                     </TextField>
                <ChoiceBox fx:id="levelDB" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="231.0">
@@ -40,6 +40,10 @@
                <font>
                   <Font name="Hack Regular" size="13.0" />
                </font></Label>
+            <Label layoutX="58.0" layoutY="48.0" text="İsim" />
+            <Label layoutX="46.0" layoutY="104.0" text="Soyisim" />
+            <Label layoutX="18.0" layoutY="217.0" text="Kullanıcı Adı" />
+            <Label layoutX="54.0" layoutY="274.0" text="Şifre" />
             </AnchorPane>
         </Tab>
         <Tab fx:id="degistirButoon" onSelectionChanged="#refreshTableView" text="Kişi Değiştir/Çıkar">
