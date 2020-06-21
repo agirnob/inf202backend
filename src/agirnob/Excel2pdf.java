@@ -4,9 +4,6 @@ package agirnob;
 import com.aspose.cells.SaveFormat;
 import com.aspose.cells.Workbook;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Excel2pdf {
     public static void deneme() throws Exception {
         try {

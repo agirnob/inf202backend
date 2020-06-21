@@ -290,215 +290,208 @@ public class SirketBilgileri implements Initializable {
                 ilceComboBox.getItems().setAll(ilceler.getIlceErzincan());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
+
             case 31:
-                ilceComboBox.getItems().setAll(ilceler.getIlceErzincan());
-                ilceComboBox.getSelectionModel().selectFirst();
-                break;
-            case 32:
                 ilceComboBox.getItems().setAll(ilceler.getIlceErzurum());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 33:
+            case 32:
                 ilceComboBox.getItems().setAll(ilceler.getIlceEskisehir());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 34:
+            case 33:
                 ilceComboBox.getItems().setAll(ilceler.getIlceGaziantep());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 35:
+            case 34:
                 ilceComboBox.getItems().setAll(ilceler.getIlceGiresun());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 36:
+            case 35:
                 ilceComboBox.getItems().setAll(ilceler.getIlceGumushane());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 37:
+            case 36:
                 ilceComboBox.getItems().setAll(ilceler.getIlceHakkari());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 38:
+            case 37:
                 ilceComboBox.getItems().setAll(ilceler.getIlceHatay());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 39:
+            case 38:
                 ilceComboBox.getItems().setAll(ilceler.getIlceigdir());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 40:
+            case 39:
                 ilceComboBox.getItems().setAll(ilceler.getIlceisparta());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 41:
+            case 40:
                 ilceComboBox.getItems().setAll(ilceler.getIlceistanbul());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 42:
+            case 41:
                 ilceComboBox.getItems().setAll(ilceler.getIlceizmir());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 43:
+            case 42:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKahramanmaras());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 44:
+            case 43:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKarabuk());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 45:
+            case 44:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKaraman());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 46:
+            case 45:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKars());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 47:
+            case 46:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKastamonu());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 48:
+            case 47:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKayseri());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 49:
+            case 48:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKilis());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 50:
+            case 49:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKirikkale());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 51:
+            case 50:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKirklareli());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 52:
+            case 51:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKirsehir());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 53:
+            case 52:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKocaeli());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 54:
+            case 53:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKonya());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 55:
+            case 54:
                 ilceComboBox.getItems().setAll(ilceler.getIlceKutahya());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 56:
+            case 55:
                 ilceComboBox.getItems().setAll(ilceler.getIlceMalatya());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 57:
+            case 56:
                 ilceComboBox.getItems().setAll(ilceler.getIlceManisa());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 58:
+            case 57:
                 ilceComboBox.getItems().setAll(ilceler.getIlceMardin());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 59:
+            case 58:
                 ilceComboBox.getItems().setAll(ilceler.getIlceMersin());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 60:
+            case 59:
                 ilceComboBox.getItems().setAll(ilceler.getIlceMugla());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 61:
+            case 60:
                 ilceComboBox.getItems().setAll(ilceler.getIlceMus());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
+            case 61:
+                ilceComboBox.getItems().setAll(ilceler.getIlceNevsehir());
+                ilceComboBox.getSelectionModel().selectFirst();
+                break;
             case 62:
-                ilceComboBox.getItems().setAll(ilceler.getIlceNevsehir());
-                ilceComboBox.getSelectionModel().selectFirst();
-                break;
-            case 63:
-                ilceComboBox.getItems().setAll(ilceler.getIlceNevsehir());
-                ilceComboBox.getSelectionModel().selectFirst();
-                break;
-            case 64:
                 ilceComboBox.getItems().setAll(ilceler.getIlceNigde());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 65:
+            case 63:
                 ilceComboBox.getItems().setAll(ilceler.getIlceOrdu());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 66:
+            case 64:
                 ilceComboBox.getItems().setAll(ilceler.getIlceOsmaniye());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 67:
+            case 65:
                 ilceComboBox.getItems().setAll(ilceler.getIlceRize());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 68:
+            case 66:
                 ilceComboBox.getItems().setAll(ilceler.getIlceSakarya());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 69:
+            case 67:
                 ilceComboBox.getItems().setAll(ilceler.getIlceSamsun());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 70:
+            case 68:
                 ilceComboBox.getItems().setAll(ilceler.getIlcesanliurfa());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 71:
+            case 69:
                 ilceComboBox.getItems().setAll(ilceler.getIlceSiirt());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 72:
+            case 70:
                 ilceComboBox.getItems().setAll(ilceler.getIlceSinop());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 73:
+            case 71:
                 ilceComboBox.getItems().setAll(ilceler.getIlceSivas());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 74:
+            case 72:
                 ilceComboBox.getItems().setAll(ilceler.getIlcesirnak());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 75:
+            case 73:
                 ilceComboBox.getItems().setAll(ilceler.getIlceTekirdag());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 76:
+            case 74:
                 ilceComboBox.getItems().setAll(ilceler.getIlceTokat());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 77:
+            case 75:
                 ilceComboBox.getItems().setAll(ilceler.getIlceTrabzon());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 78:
+            case 76:
                 ilceComboBox.getItems().setAll(ilceler.getIlceTunceli());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 79:
+            case 77:
                 ilceComboBox.getItems().setAll(ilceler.getIlceUsak());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 80:
+            case 78:
                 ilceComboBox.getItems().setAll(ilceler.getIlceVan());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 81:
+            case 79:
                 ilceComboBox.getItems().setAll(ilceler.getIlceYalova());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 82:
+            case 80:
                 ilceComboBox.getItems().setAll(ilceler.getIlceYozgat());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
-            case 83:
+            case 81:
                 ilceComboBox.getItems().setAll(ilceler.getIlceZonguldak());
                 ilceComboBox.getSelectionModel().selectFirst();
                 break;
